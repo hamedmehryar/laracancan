@@ -6,6 +6,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
 
 class Resourcepermission extends Model {
+
+    protected $table = 'lcc_resourcepermissions';
     public $timestamps = false;
 
 	public function resource(){
@@ -30,7 +32,7 @@ class Resourcepermission extends Model {
             $delete = Resourcepermission::find($id);
             self::where('parent_id', $this->id)->where('permission_id', $delete->permission_id)->where('resource_id', $delete->resource_id)->delete();
             foreach(Role::all() as $role){
-                DB::table('resourcepermission_role')->where('role_id', $role->id)->where('parent_id', $this->id)->where('resourcepermission_id', $delete->id)->delete();
+                DB::table('lcc_resourcepermission_role')->where('role_id', $role->id)->where('parent_id', $this->id)->where('resourcepermission_id', $delete->id)->delete();
             }
         }
         $newChildIds = array_diff($childIds, $currentChildIds);
@@ -42,7 +44,7 @@ class Resourcepermission extends Model {
             $child ->save();
             foreach(Role::all() as $role){
                 if($role->resourcePermissions()->where('id', $this->id)->exists()){
-                    DB::table('resourcepermission_role')->insert(array('role_id'=>$role->id, 'resourcepermission_id'=>$child->id, 'parent_id'=>$this->id));
+                    DB::table('lcc_resourcepermission_role')->insert(array('role_id'=>$role->id, 'resourcepermission_id'=>$child->id, 'parent_id'=>$this->id));
                 }
             }
         }

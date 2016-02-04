@@ -5,12 +5,14 @@ use Illuminate\Foundation\Application;
 
 class Resource extends Model {
 
+    protected $table = 'lcc_resources';
+
     public function resourcePermissions(){
-        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Permission', 'resourcepermissions')->where('parent_id', null);
+        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Permission', 'lcc_resourcepermissions')->where('parent_id', null);
     }
 
     public function childResources(){
-        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'resourcerelations', 'resource_id', 'child_id')->withPivot('pivot');
+        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'lcc_resourcerelations', 'resource_id', 'child_id')->withPivot('pivot');
     }
 
     public function childResourcesIds(){
@@ -22,7 +24,7 @@ class Resource extends Model {
     }
 
     public function parentResources(){
-        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'resourcerelations', 'child_id', 'resource_id')->withPivot('pivot');
+        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'lcc_resourcerelations', 'child_id', 'resource_id')->withPivot('pivot');
     }
 
     public function parentResourcesIds(){

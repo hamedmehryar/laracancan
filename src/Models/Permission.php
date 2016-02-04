@@ -6,6 +6,6 @@ class Permission extends Model
 {
     protected $table = 'lcc_permissions';
     public function resources(){
-        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'resourcepermissions');
+        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resource', 'lcc_resourcepermissions');
     }
 }

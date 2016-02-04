@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Config;
 
 class Role extends Model
 {
-    protected $table = 'roles';
+    protected $table = 'lcc_roles';
 
 	public function resourcePermissions(){
-		return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resourcepermission');
+		return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Resourcepermission', 'lcc_resourcepermission_role');
 	}
 
     /**
@@ -18,7 +18,7 @@ class Role extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(Config::get('auth.model'), 'role_user');
+        return $this->belongsToMany(Config::get('auth.model'), 'lcc_role_user');
     }
 
     /**
