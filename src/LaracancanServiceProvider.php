@@ -15,6 +15,9 @@ class LaracancanServiceProvider extends ServiceProvider {
 		$this->publishes([
 			base_path('vendor/hamedmehryar/laracancan/src/config/config.php') => config_path('laracancan.php')
 		]);
+
+		// Register commands
+		$this->commands('command.laracancan.migration');
 	}
 
 	/**
