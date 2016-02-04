@@ -13,7 +13,7 @@ class LaracancanServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->publishes([
-			base_path('hamedmehryar/laracancan/src/config/config.php') => config_path('laracancan.php')
+			base_path('vendor/hamedmehryar/laracancan/src/config/config.php') => config_path('laracancan.php')
 		]);
 	}
 
@@ -25,7 +25,7 @@ class LaracancanServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->mergeConfigFrom(
-			base_path('hamedmehryar/laracancan/src/config/config.php'), 'laracancan'
+			base_path('vendor/hamedmehryar/laracancan/src/config/config.php'), 'laracancan'
 		);
 
 		$this->registerLaracancan();
