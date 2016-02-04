@@ -1,5 +1,5 @@
 {
-    "name": "hamedmehryar/laravel-authorizer",
+    "name": "hamedmehryar/laracancan",
     "description": "Resource Based Permission System for Laravel",
     "type": "library",
     "license": "MIT",
