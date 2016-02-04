@@ -1,0 +1,29 @@
+{
+    "name": "hamedmehryar/laravel-authorizer",
+    "description": "Resource Based Permission System for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hamed Mehryar",
+            "email": "hamed@netlinks.af"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/console": "~5.0",
+        "illuminate/support": "~5.0"
+    },
+    "require-dev": {
+        "illuminate/database": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/commands"
+        ],
+        "psr-4": {
+            "Hamedmehryar\\Laracancan\\": "src/"
+        }
+    }
+}
