@@ -58,7 +58,7 @@ class CreateLaracancanTables extends Migration
         });
 
         // Create table for associating resources to each other (Many-to-Many)
-        Schema::create('{{ resourceRelationsTable }}', function (Blueprint $table) {
+        Schema::create('{{ $resourceRelationsTable }}', function (Blueprint $table) {
             $table->integer('resource_id');
             $table->integer('child_id');
             $table->string('pivot')->nullable();
@@ -95,7 +95,10 @@ class CreateLaracancanTables extends Migration
      */
     public function down()
     {
-        Schema::drop('{{ $permissionRoleTable }}');
+        Schema::drop('{{ $resourcePermissionRoleTable }}');
+        Schema::drop('{{ $resourcePermissionTable }}');
+        Schema::drop('{{ $resourceRelationsTable }}');
+        Schema::drop('{{ $resourcesTable }}');
         Schema::drop('{{ $permissionsTable }}');
         Schema::drop('{{ $roleUserTable }}');
         Schema::drop('{{ $rolesTable }}');
