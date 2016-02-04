@@ -36,10 +36,10 @@ Migrate your database:
 
 Add the trait to your user model:
 
-    use Hamedmehryar\Laracancan\Traits\Laracancan;
+    use Hamedmehryar\Laracancan\Traits\LaracancanUserTriat;
     
     class User extends Model {
-    	use Laracancan;
+    	use LaracancanUserTrait;
     }
 
 
