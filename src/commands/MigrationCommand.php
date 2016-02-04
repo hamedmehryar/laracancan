@@ -32,7 +32,7 @@ class MigrationCommand extends Command
      */
     public function fire()
     {
-        $this->laravel->view->addNamespace('entrust', substr(__DIR__, 0, -8).'views');
+        $this->laravel->view->addNamespace('laracancan', substr(__DIR__, 0, -8).'views');
 
         $rolesTable                 = 'lcc_roles';
         $roleUserTable              = 'lcc_role_user';
