@@ -1,6 +1,9 @@
 <?php namespace Hamedmehryar\Laracancan\Traits;
 
 
+use Hamedmehryar\Laracancan\Models\Resource;
+use Illuminate\Support\Facades\Config;
+
 trait LaracancanUserTrait{
 
     /**
@@ -154,6 +157,9 @@ trait LaracancanUserTrait{
      */
     function canCreate($resource){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission('create');
         $resourceNames = array();
         foreach($resources as $r){
@@ -168,6 +174,9 @@ trait LaracancanUserTrait{
      */
     function canRead($resource){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission('read');
         $resourceNames = array();
         foreach($resources as $r){
@@ -184,6 +193,9 @@ trait LaracancanUserTrait{
      */
     function canUpdate($resource){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission('update');
         $resourceNames = array();
         foreach($resources as $r){
@@ -198,6 +210,9 @@ trait LaracancanUserTrait{
      */
     function canDelete($resource){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission('delete');
         $resourceNames = array();
         foreach($resources as $r){
@@ -213,6 +228,9 @@ trait LaracancanUserTrait{
      */
     function canTrash($resource){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission('trash');
         $resourceNames = array();
         foreach($resources as $r){
@@ -229,6 +247,9 @@ trait LaracancanUserTrait{
      */
     function can($resource, $permission){
 
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return true;
+        }
         $resources = $this->resourcesByPermission($permission);
         $resourceNames = array();
         foreach($resources as $r){
@@ -243,7 +264,9 @@ trait LaracancanUserTrait{
      * @return array
      */
     function resourcesByPermission($permission){
-
+        if($this->id == Config::get('laracancan.super_admin',0)){
+            return Resource::all();
+        }
         $roles = $this->roles;
         $resourses = array();
         foreach($roles as $role){
