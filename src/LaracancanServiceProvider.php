@@ -1,6 +1,7 @@
 <?php namespace Hamedmehryar\Laracancan;
 
 use Hamedmehryar\Laracancan\Commands\MigrationCommand;
+use Hamedmehryar\Laracancan\Commands\SeederCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LaracancanServiceProvider extends ServiceProvider {
@@ -18,6 +19,7 @@ class LaracancanServiceProvider extends ServiceProvider {
 
 		// Register commands
 		$this->commands('command.laracancan.migration');
+		$this->commands('command.laracancan.seed');
 	}
 
 	/**
@@ -57,6 +59,9 @@ class LaracancanServiceProvider extends ServiceProvider {
 		$this->app->bindShared('command.laracancan.migration', function ($app) {
 			return new MigrationCommand();
 		});
+		$this->app->bindShared('command.laracancan.seed', function ($app) {
+			return new SeederCommand();
+		});
 	}
 
 	/**
@@ -67,7 +72,8 @@ class LaracancanServiceProvider extends ServiceProvider {
 	public function provides()
 	{
 		return [
-			'command.laracancan.migration'
+			'command.laracancan.migration',
+			'command.laracancan.seed'
 		];
 	}
 
