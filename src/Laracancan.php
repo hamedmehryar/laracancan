@@ -81,6 +81,19 @@ class Laracancan
 
     /**
      * Function for readable resources of user
+     * @param $permission
+     * @return array
+     */
+    function resourcesByPermission($permission){
+
+        if ($user = $this->user()) {
+            return $user->resourcesByPermission($permission);
+        }
+        return false;
+    }
+
+    /**
+     * Function for readable resources of user
      * @return array
      */
     function readableResources(){
