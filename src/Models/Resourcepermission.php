@@ -1,6 +1,5 @@
 <?php namespace Hamedmehryar\Laracancan\Models;
 
-use App\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
