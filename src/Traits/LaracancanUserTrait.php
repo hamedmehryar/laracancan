@@ -10,7 +10,7 @@ trait LaracancanUserTrait{
      */
     public function roles()
     {
-        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Role', 'role_user', 'user_id', 'role_id');
+        return $this->belongsToMany('Hamedmehryar\Laracancan\Models\Role', 'lcc_role_user', 'user_id', 'role_id');
     }
 
     /**
