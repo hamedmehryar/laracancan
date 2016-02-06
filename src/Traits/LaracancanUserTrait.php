@@ -224,24 +224,6 @@ trait LaracancanUserTrait{
 
     /**
      * @param $resource
-     * @return bool
-     */
-    function canTrash($resource){
-
-        if($this->id == Config::get('laracancan.super_admin',0)){
-            return true;
-        }
-        $resources = $this->resourcesByPermission('trash');
-        $resourceNames = array();
-        foreach($resources as $r){
-            $resourceNames[] = $r->name;
-        }
-
-        return in_array($resource, $resourceNames);
-    }
-
-    /**
-     * @param $resource
      * @param $permission
      * @return bool
      */

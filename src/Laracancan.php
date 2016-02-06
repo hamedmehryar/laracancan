@@ -168,18 +168,6 @@ class Laracancan
     }
 
     /**
-     * @param $resource
-     * @return bool
-     */
-    function canTrash($resource){
-
-        if ($user = $this->user()) {
-            return $user->canTrash($resource);
-        }
-        return false;
-    }
-
-    /**
      * Check if the current user has a permission on a resource
      *
      * @param string $resource
