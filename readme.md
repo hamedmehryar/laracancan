@@ -51,6 +51,7 @@ Add the trait to your user model:
 ##usage
 
 Permission checking:
+
     Laracancan::canCreate('<resource-name>');
     Laracancan::canRead('<resource-name>');
     Laracancan::canUpdate('<resource-name>');
@@ -64,6 +65,7 @@ Permission checking:
     $user->can('<resource-name>', '<permission-name>');
 
 Role checking:
+
     Laracancan::roles();
     Laracancan::hasRole();
 
@@ -71,6 +73,7 @@ Role checking:
     $user->hasRole();
 
 Getting Resources based on Permission:
+
     Laracancan::creatableResources();
     Laracancan::readableResources();
     Laracancan::updatableResources();
@@ -84,6 +87,7 @@ Getting Resources based on Permission:
     $user->resourcesByPermission('<permission-name');
 
 Attaching Roles to user:
+
     $user->attachRole('<role-object>');
     $user->detachRole('<role-object>');
 
