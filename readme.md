@@ -35,6 +35,10 @@ Migrate your database:
 
     php artisan migrate
 
+Seed the Permissions:
+
+    php artisan laracancan:seed
+
 Add the trait to your user model:
 
     use Hamedmehryar\Laracancan\Traits\LaracancanUserTriat;
@@ -43,6 +47,48 @@ Add the trait to your user model:
     	use LaracancanUserTrait;
     }
 
+
+##usage
+
+Permission checking:
+    Laracancan::canCreate('<resource-name>');
+    Laracancan::canRead('<resource-name>');
+    Laracancan::canUpdate('<resource-name>');
+    Laracancan::canDelete('<resource-name>');
+    Laracancan::can('<resource-name>', '<permission-name>');
+
+    $user->canCreate('<resource-name>');
+    $user->canRead('<resource-name>');
+    $user->canUpdate('<resource-name>');
+    $user->canDelete('<resource-name>');
+    $user->can('<resource-name>', '<permission-name>');
+
+Role checking:
+    Laracancan::roles();
+    Laracancan::hasRole();
+
+    $user->roles();
+    $user->hasRole();
+
+Getting Resources based on Permission:
+    Laracancan::creatableResources();
+    Laracancan::readableResources();
+    Laracancan::updatableResources();
+    Laracancan::deletableResources();
+    Laracancan::resourcesByPermission('<permission-name');
+
+    $user->creatableResources();
+    $user->readableResources();
+    $user->updatableResources();
+    $user->deletableResources();
+    $user->resourcesByPermission('<permission-name');
+
+Attaching Roles to user:
+    $user->attachRole('<role-object>');
+    $user->detachRole('<role-object>');
+
+    $user->attachRoles('<roles>');
+    $user->detachRoles('<roles>');
 
 
 ## Author
