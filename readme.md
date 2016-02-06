@@ -1,3 +1,4 @@
+#Note: This is a pre-release version ;)
 # LaraCanCan
 Resource-Based permission system for laravel
 
