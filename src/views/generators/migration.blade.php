@@ -71,18 +71,18 @@ class CreateLaracancanTables extends Migration
             $table->integer('resource_id')->unsigned()->nullable();
             $table->integer('parent_id')->nullable();
 
-            $table->foreign('permission_id')->references('id')->on('permissions');
-            $table->foreign('resource_id')->references('id')->on('resources');
+            $table->foreign('permission_id')->references('id')->on('{{$permissionsTable}}');
+            $table->foreign('resource_id')->references('id')->on('{{$resourcesTable}}');
         });
 
         // Create table for assiciating resource-permissions to roles
         Schema::create('{{ $resourcePermissionRoleTable }}', function (Blueprint $table) {
             $table->integer('resourcepermission_id')->unsigned()->nullable();
-            $table->foreign('resourcepermission_id')->references('id')->on('resourcepermissions')
+            $table->foreign('resourcepermission_id')->references('id')->on('{{$resourcePermissionTable}}')
             ->onDelete('cascade');
 
             $table->integer('role_id')->unsigned()->nullable();
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('{{$rolesTable}}');
 
             $table->integer('parent_id')->nullable();
         });
