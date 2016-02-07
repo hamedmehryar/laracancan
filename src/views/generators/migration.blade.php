@@ -62,6 +62,11 @@ class CreateLaracancanTables extends Migration
             $table->integer('resource_id');
             $table->integer('child_id');
             $table->string('pivot')->nullable();
+
+            $table->foreign('resource_id')->references('id')->on('{{$resourcesTable}}')
+                ->onDelete('cascade');
+            $table->foreign('child_id')->references('id')->on('{{$resourcesTable}}')
+                ->onDelete('cascade');
         });
 
         // Create table for associating permissions to resources (Many-to-Many)
