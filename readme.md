@@ -56,13 +56,13 @@ Permission checking:
     Laracancan::canRead('<resource-name>');
     Laracancan::canUpdate('<resource-name>');
     Laracancan::canDelete('<resource-name>');
-    Laracancan::can('<resource-name>', '<permission-name>');
+    Laracancan::can('<permission-name>', '<resource-name>');
 
     $user->canCreate('<resource-name>');
     $user->canRead('<resource-name>');
     $user->canUpdate('<resource-name>');
     $user->canDelete('<resource-name>');
-    $user->can('<resource-name>', '<permission-name>');
+    $user->can('<permission-name>', '<resource-name>');
 
 Role checking:
 

@@ -183,11 +183,11 @@ class Laracancan
     /**
      * Check if the current user has a permission on a resource
      *
-     * @param string $resource
      * @param string $permission Permission string.
+     * @param string $resource Resource string
      * @return bool
      */
-    public function can($resource, $permission)
+    public function can($permission, $resource)
     {
         if ($user = $this->user()) {
             return $user->can($resource, $permission);
