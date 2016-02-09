@@ -23,7 +23,7 @@ class RoleController extends Controller {
 			$roles = Role::active()->get();
 			$trashed_roles = Role::trashed()->get();
 
-			return view('role.list')
+			return view('laracancan::role.list')
 				->with('resource', $resource)
 				->with('roles', $roles)
 				->with('trashed_roles', $trashed_roles);
@@ -41,7 +41,7 @@ class RoleController extends Controller {
 	public function create()
 	{
 		if(Auth::user() != null && Auth::user()->canCreate('role')){
-			return view('role.add');
+			return view('laracancan::role.add');
 		}else{
 			return "LOGOUT";
 		}
@@ -108,7 +108,7 @@ class RoleController extends Controller {
 		if(Auth::user() != null && Auth::user()->canUpdate('role')){
 
 			$role = Role::find($id);
-			return view('role.edit')
+			return view('laracancan::role.edit')
 				->with('role', $role);
 
 		}else{
@@ -253,7 +253,7 @@ class RoleController extends Controller {
 		if(Auth::user() != null && Auth::user()->can('role', 'manage_permissions')){
 
 			$role = Role::find($id);
-			return view('role.manage_permissions')
+			return view('laracancan::role.manage_permissions')
 				->with('role', $role);
 
 		}else{

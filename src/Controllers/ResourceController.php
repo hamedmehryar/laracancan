@@ -19,7 +19,7 @@ class ResourceController extends Controller {
 			$resource = Resource::where('name', 'resource')->first();
 			$resources = Resource::all();
 
-			return view('resource.list')
+			return view('laracancan::resource.list')
 				->with('resource', $resource)
 				->with('resources', $resources);
 
@@ -36,7 +36,7 @@ class ResourceController extends Controller {
 	public function create()
 	{
 		if(Auth::user() != null && Auth::user()->canCreate('resource')){
-			return view('resource.add');
+			return view('laracancan::resource.add');
 		}else{
 			return "LOGOUT";
 		}
@@ -115,7 +115,7 @@ class ResourceController extends Controller {
 	{
 		if(Auth::user()!= null && Auth::user()->canUpdate('resource')) {
 			$resource = Resource::find($id);
-			return view('resource.edit')
+			return view('laracancan::resource.edit')
 				->with('resource', $resource);
 		}else{
 			return "LOGOUT";
@@ -195,7 +195,7 @@ class ResourceController extends Controller {
 	public function manageChildren($id){
 		if(Auth::user() != null && Auth::user()->canUpdate('resource')){
 			$resource = Resource::find($id);
-			return view('resource.manage_children')
+			return view('laracancan::resource.manage_children')
 				->with('resource', $resource);
 		}else{
 			return response(view('errors.401'), 401);

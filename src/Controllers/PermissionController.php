@@ -21,7 +21,7 @@ class PermissionController extends Controller {
 			if(Input::get('ajax') == null){
 				$resource = Resource::where('name', 'permission')->first();
 				$resources = Resource::all();
-				return view('permission.list')
+				return view('laracancan::permission.list')
 					->with('resource', $resource)
 					->with('resources', $resources);
 
@@ -41,7 +41,7 @@ class PermissionController extends Controller {
 	public function create()
 	{
 		if(Auth::user() != null && Auth::user()->canCreate('permission')){
-			return view('permission.add');
+			return view('laracancan::permission.add');
 		}else{
 			return "LOGOUT";
 		}
@@ -108,7 +108,7 @@ class PermissionController extends Controller {
 		if(Auth::user() != null && Auth::user()->canUpdate('permission')){
 
 			$permission = Permission::find($id);
-			return view('permission.edit')
+			return view('laracancan::permission.edit')
 				->with('permission', $permission);
 
 		}else{

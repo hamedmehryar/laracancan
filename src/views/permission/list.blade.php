@@ -1,4 +1,4 @@
-@extends('Dashboard.master')
+@extends('laracancan::master.master')
 @section('page_specific_styles')
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- DATATABLES-->

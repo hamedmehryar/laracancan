@@ -30,7 +30,7 @@ class ResourcepermissionController extends Controller {
 		if(Auth::user() != null && Auth::user()->canCreate('resourcepermission')){
 
 			$resource = Resource::find(Input::get('resource_id'));
-			return view('permission.add_resourcepermission')
+			return view('laracancan::permission.add_resourcepermission')
 				->with('resource', $resource);
 
 		}else{
@@ -130,7 +130,7 @@ class ResourcepermissionController extends Controller {
 		$resource = $resourcePermission->resource;
 		$canAlsoes = Resourcepermission::where('resource_id', $resource->id)->where('id', '!=', $resourcePermission->id)->whereNull('parent_id')->whereNotIn('id', $resourcePermission->parentsIds())->get();
 
-		return view('permission.can_also')
+		return view('laracancan::permission.can_also')
 			->with('resourcePermission', $resourcePermission)
 			->with('canAlsoes', $canAlsoes)
 			->with('resource', $resource);
