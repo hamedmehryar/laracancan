@@ -54,7 +54,8 @@ class CreateLaracancanTables extends Migration
         $table->string('table_name');
         $table->string('model_name');
         $table->string('icon_class')->nullable();
-        $table->integer('in_sidemenu')->nullable();
+        $table->tinyInteger('in_sidemenu')->nullable();
+        $table->tinyInteger('is_reportable')->nullable();
         });
 
         // Create table for associating resources to each other (Many-to-Many)
