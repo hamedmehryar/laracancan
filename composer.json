@@ -12,8 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "illuminate/console": "~5.0",
-        "illuminate/support": "~5.0"
+        "laravel/framework": "~5.0"
     },
     "require-dev": {
         "illuminate/database": "~5.0"
