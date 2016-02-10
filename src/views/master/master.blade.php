@@ -31,10 +31,8 @@
 <body>
 <div class="wrapper">
     <div id="page-overlay"></div>
-    <!-- top navbar-->
-    <header class="topnavbar-wrapper" style="position:static">
         <!-- START Top Navbar-->
-        <nav role="navigation" class="navbar topnavbar">
+        <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
             <!-- START navbar header-->
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">
@@ -68,7 +66,6 @@
             <!-- END Nav wrapper-->
         </nav>
         <!-- END Top Navbar-->
-    </header>
 
     <!-- sidebar-->
     <aside class="aside">
@@ -138,61 +135,11 @@
 <script src="{{ asset('hamedmehryar/laracancan/js/dataTables.responsive.js')}}"></script>
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('hamedmehryar/laracancan/js/app.js') }}"></script>
-<script src="{{ asset('jquery.tablesorter/jquery.tablesorter.js') }}"></script>
-
-<script src="{{ asset('dashboards/vendor/moment/min/moment-with-locales.min.js') }}"></script>
-<script src="{{ asset('dashboards/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.js') }}"></script>
 <script src="{{ asset('courseCoordinator/js/custom.js') }}"></script>
-
-<script src="{{ asset('notification/js/notification.js') }}"></script>
-<script src="{{ asset('messages/message.js') }}"></script>
 <script src="{{ asset('dashboards/js/pace.min.js')}}"></script>
 <script src="{{ asset('jquery.confirm-master/jquery.confirm.min.js') }}"></script>
-<script>
-    @if($user->lang != "en")
-        $(function(){
-            $('.toggle-calendar').trigger('click');
-        });
-        $(document).ajaxComplete(function(){
-            $('.toggle-calendar').trigger('click');
-        });
-    @endif
-</script>
-<script>
-    <?php
-
-    $NotificationSoundNO=1;
-    $ifNotificationSoundAllowed=true;
-
-     if(\Illuminate\Support\Facades\DB::table('notification_settings')->where('user_id',$user->id)->where('resource','notification_sound')->exists()){
-
-        $NotificationSoundNO=\Illuminate\Support\Facades\DB::table('notification_settings')->where('user_id',$user->id)->where('resource','notification_sound')->first()->record_id;
-
-     }
-
-     if(\Illuminate\Support\Facades\DB::table('notification_settings')->where('user_id',$user->id)->where('resource','notification_play_sound')->exists()){
-
-        if(!(\Illuminate\Support\Facades\DB::table('notification_settings')->where('user_id',$user->id)->where('resource','notification_play_sound')->first()->allowed)){
-            $ifNotificationSoundAllowed=false;
-        }
-
-     }
-
-
-    ?>
-    NotificationSound=new Audio('/sounds/'+"<?php echo $NotificationSoundNO ?>"+'.mp3');
-    ifNotificationSoundAllowed="<?php echo $ifNotificationSoundAllowed ?>";
-//    isFirstNotification=true;
-    function PlayNotificationSound(){
-//        if(ifNotificationSoundAllowed && !(isFirstNotification)){
-        if(ifNotificationSoundAllowed){
-            NotificationSound.play();
-        }
-    }
-</script>
 @yield('page_specific_scripts')
-<ul class="chat-row">
-</ul>
 </body>
 
 </html>
