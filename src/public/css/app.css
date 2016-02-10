@@ -1067,7 +1067,6 @@ body {
 .sidebar {
   height: 100%;
   padding-bottom: 20px;
-  background-image: url("/images/side-pattern.png");
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

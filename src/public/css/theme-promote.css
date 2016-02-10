@@ -12,7 +12,7 @@ section{
  ========================================================================== */
 .topnavbar .navbar-header {
     background-color: transparent;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffABC1CE', GradientType=1);
 }
 @media only screen and (min-width: 768px) {
     .topnavbar .navbar-header {
@@ -47,16 +47,16 @@ section{
     background-clip: border-box;
     -webkit-background-size: 5px 5px;
     background-size: 5px 5px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffABC1CE', GradientType=1);
 }
 @media only screen and (min-width: 768px) {
     .topnavbar {
         background-color: #ABC1CE;
-        background-image: -webkit-linear-gradient(left, #ABC1CE 0%, #c3203f 100%);
-        background-image: -o-linear-gradient(left, #ABC1CE 0%, #c3203f 100%);
-        background-image: linear-gradient(to right, #ABC1CE 0%, #c3203f 100%);
+        background-image: -webkit-linear-gradient(left, #ABC1CE 0%, #ABC1CE 100%);
+        background-image: -o-linear-gradient(left, #ABC1CE 0%, #ABC1CE 100%);
+        background-image: linear-gradient(to right, #ABC1CE 0%, #ABC1CE 100%);
         background-repeat: repeat-x;
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffABC1CE', GradientType=1);
     }
     .topnavbar .navbar-nav > .open > a,
     .topnavbar .navbar-nav > .open > a:hover,
@@ -98,14 +98,14 @@ section{
 .sidebar .nav > li.active .nav,
 .sidebar .nav > li.open .nav {
     background-color: #383d4e;
-    color: #c3203f;
+    color: #ABC1CE;
 }
 .sidebar .nav > li.active > a > em,
 .sidebar .nav > li.open > a > em {
-    color: #c3203f;
+    color: #ABC1CE;
 }
 .sidebar .nav > li.active {
-    border-left-color: #c3203f;
+    border-left-color: #ABC1CE;
 }
 .sidebar-subnav {
     background-color: #3a3f51;
@@ -121,16 +121,16 @@ section{
 .sidebar-subnav > li > .nav-item:focus,
 .sidebar-subnav > li > a:hover,
 .sidebar-subnav > li > .nav-item:hover {
-    color: #c3203f;
+    color: #ABC1CE;
 }
 .sidebar-subnav > li.active > a,
 .sidebar-subnav > li.active > .nav-item {
-    color: #c3203f;
+    color: #ABC1CE;
 }
 .sidebar-subnav > li.active > a:after,
 .sidebar-subnav > li.active > .nav-item:after {
-    border-color: #c3203f;
-    background-color: #c3203f;
+    border-color: #ABC1CE;
+    background-color: #ABC1CE;
 }
 /* ========================================================================
    Component: offsidebar
