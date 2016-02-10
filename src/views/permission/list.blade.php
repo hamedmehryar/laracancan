@@ -18,9 +18,9 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>{{$resource['display_name_en']}}</h2>
+                    <h2>Permissions</h2>
                     <ol class="breadcrumb" class="pull-right">
-                      <li class="active"><i class="fa fa-{{$resource->icon_class}}"></i>&nbsp;{{$resource['display_name_en']}}</li>
+                      <li class="active"><i class="fa fa-key"></i>&nbsp;Permissions</li>
                     </ol>
                 </div>
             </div>

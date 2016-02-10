@@ -20,10 +20,8 @@ class PermissionController extends Controller {
 		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin'))
 		{
 			if(Input::get('ajax') == null){
-				$resource = Resource::where('name', 'permission')->first();
 				$resources = Resource::all();
 				return view('laracancan::permission.list')
-					->with('resource', $resource)
 					->with('resources', $resources);
 
 			}else{

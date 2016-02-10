@@ -20,14 +20,10 @@ class RoleController extends Controller {
 	public function index()
 	{
 		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
-			$resource = Resource::where('name', 'role')->first();
 			$roles = Role::active()->get();
-			$trashed_roles = Role::trashed()->get();
 
 			return view('laracancan::role.list')
-				->with('resource', $resource)
-				->with('roles', $roles)
-				->with('trashed_roles', $trashed_roles);
+				->with('roles', $roles);
 
 		}else{
 			return response(view('errors.401'), 401);

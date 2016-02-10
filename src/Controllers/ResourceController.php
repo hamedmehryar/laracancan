@@ -17,11 +17,9 @@ class ResourceController extends Controller {
 	public function index()
 	{
 		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
-			$resource = Resource::where('name', 'resource')->first();
 			$resources = Resource::all();
 
 			return view('laracancan::resource.list')
-				->with('resource', $resource)
 				->with('resources', $resources);
 
 		}else{

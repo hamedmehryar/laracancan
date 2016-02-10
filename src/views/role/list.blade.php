@@ -16,7 +16,7 @@
 @section('content')
             <div class="row">
                 <div class="col-md-6">
-                    <h2>{{$resource['display_name_en']}}</h2>
+                    <h2>Roles</h2>
                 </div>
                 <div class="col-md-6">
                     <button href="#" id="add_role_btn" class="btn btn-danger bottom_buttons notext large"><i class="fa fa-plus"></i></button>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ol class="breadcrumb" class="pull-right">
-                      <li class="active"><i class="fa fa-{{$resource->icon_class}}"></i>&nbsp;{{$resource['display_name_en']}}</li>
+                      <li class="active"><i class="fa fa-user"></i>&nbsp;Roles</li>
                     </ol>
                 </div>
             </div>
