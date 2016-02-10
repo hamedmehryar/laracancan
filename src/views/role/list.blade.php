@@ -2,8 +2,8 @@
 @section('page_specific_styles')
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- DATATABLES-->
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/css/dataTables.colVis.css') }}">
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatables-colvis/css/dataTables.colVis.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
     <style>
         li.training_grid {
             display: -moz-inline-stack;
@@ -129,10 +129,10 @@
     <!-- Custom JS -->
     <script src="{{ asset('hamedmehryar/laracancan/js/custom.js') }}"></script>
     <!-- DATATABLES-->
-    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/js/dataTables.colVis.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/other/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/other/datatables-colvis/js/dataTables.colVis.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
     <script src="{{ asset('hamedmehryar/laracancan/js/demo/demo-datatable.js') }}"></script>
     <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.min.js') }}"></script>
     <script>

@@ -10,13 +10,13 @@
     <link rel="shortcut icon" href="{{asset('hamedmehryar/laracancan/img/logo.png')}}" />
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/vendor/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/other/fontawesome/css/font-awesome.min.css') }}">
     <!-- SIMPLE LINE ICONS-->
-    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/vendor/simple-line-icons/css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/other/simple-line-icons/css/simple-line-icons.css') }}">
     <!-- ANIMATE.CSS-->
-    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/vendor/animate.css/animate.min.css')  }}">
+    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/other/animate.css/animate.min.css')  }}">
     <!-- WHIRL (spinners)-->
-    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/vendor/whirl/dist/whirl.css')  }}">
+    <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/other/whirl/dist/whirl.css')  }}">
     <!-- =============== PAGE VENDOR STYLES ===============-->
 
     <!-- =============== BOOTSTRAP STYLES ===============-->
@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/css/app.css')  }}" id="maincss">
 
     <!-- DATATABLES-->
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/css/dataTables.colVis.css') }}">
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatables-colvis/css/dataTables.colVis.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/css/dataTables.responsive.css')}}">
 
 
@@ -43,8 +43,8 @@
     <link href="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/themes/blue/style.css') }}" rel="stylesheet">
     <link href="{{asset('hamedmehryar/laracancan/css/pace.css')}}" rel="stylesheet">
     <link href=" {{ asset('hamedmehryar/laracancan/bootstrap-multi-select/css/bootstrap-multiselect.css') }}" rel="stylesheet">
-    <link href="{{ asset('hamedmehryar/laracancan/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('hamedmehryar/laracancan/vendor/genie/genie.css') }}" rel="stylesheet">
+    <link href="{{ asset('hamedmehryar/laracancan/other/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('hamedmehryar/laracancan/other/genie/genie.css') }}" rel="stylesheet">
     @yield('page_specific_styles')
 </head>
 
@@ -145,50 +145,50 @@
 
 <!-- =============== VENDOR SCRIPTS ===============-->
 <!-- MODERNIZR-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/modernizr/modernizr.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/modernizr/modernizr.js') }}"></script>
 <!-- JQUERY-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/jquery/dist/jquery.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/jquery/dist/jquery.js') }}"></script>
 
 <script src="{{ asset('hamedmehryar/laracancan/jquery-ui-1.11.4.custom/jquery-ui.min.js') }}"></script>
 <!-- BOOTSTRAP-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/bootstrap/dist/js/bootstrap.js') }}"></script>
 <!-- STORAGE API-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/jQuery-Storage-API/jquery.storageapi.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/jQuery-Storage-API/jquery.storageapi.js') }}"></script>
 <!-- JQUERY EASING-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/jquery.easing/js/jquery.easing.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/jquery.easing/js/jquery.easing.js') }}"></script>
 <!-- ANIMO-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/animo.js/animo.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/animo.js/animo.js') }}"></script>
 <!-- LOCALIZE-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/jquery-localize-i18n/dist/jquery.localize.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/jquery-localize-i18n/dist/jquery.localize.js') }}"></script>
 
-<script src="{{ asset('hamedmehryar/laracancan/vendor/genie/genie.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/genie/jquery.genie.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/jqdock/jquery.jqdock.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/genie/genie.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/genie/jquery.genie.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/jqdock/jquery.jqdock.js') }}"></script>
 
 <!-- =============== PAGE VENDOR SCRIPTS ===============-->
 
 <script src="{{ asset('hamedmehryar/laracancan/js/jquery.form.min.js') }}"></script>
 
 <!-- PARSLEY-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/parsleyjs/dist/parsley.min.js') }} "></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/parsleyjs/dist/parsley.min.js') }} "></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/responsive-tabs.js') }}"></script>
 
 <!-- DATATABLES-->
-<script src="{{ asset('hamedmehryar/laracancan/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/js/dataTables.colVis.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/datatables-colvis/js/dataTables.colVis.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/dataTables.responsive.js')}}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/demo/demo-datatable.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/bootstrap-wysiwyg/bootstrap-wysiwyg.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/ifvisible/ifvisible.min.js') }}"></script>
 
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('hamedmehryar/laracancan/js/app.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.js') }}"></script>
 
-<script src="{{ asset('hamedmehryar/laracancan/vendor/moment/min/moment-with-locales.min.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/moment/min/moment-with-locales.min.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/other/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/pace.min.js')}}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.confirm-master/jquery.confirm.min.js') }}"></script>
 @yield('page_specific_scripts')

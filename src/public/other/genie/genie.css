@@ -1,0 +1,75 @@
+.genie {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+}
+.genie .genie-step {
+  background-repeat: no-repeat;
+  background-image: inherit;
+  position: absolute;
+  z-index: 1000;
+}
+/* fast */
+.genie.expand .genie-step {
+  -moz-transition: background-position 400ms ease-in-out;
+  -webkit-transition: background-position 400ms ease-in-out;
+  -o-transition: background-position 400ms ease-in-out;
+  -ms-transition: background-position 400ms ease-in-out;
+  transition: background-position 800ms ease-in-out;
+  z-index: 100;
+}
+.genie.g_collapse .genie-step {
+  -moz-transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  z-index: 100;
+}
+.genie.g_collapse.change-pace .genie-step {
+  -moz-transition: background-position 400ms ease-in-out;
+  -webkit-transition: background-position 400ms ease-in-out;
+  -o-transition: background-position 400ms ease-in-out;
+  -ms-transition: background-position 400ms ease-in-out;
+  transition: background-position 800ms ease-in-out;
+  z-index: 100;
+}
+.genie.expand.change-pace .genie-step {
+  -moz-transition: all 150ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  z-index: 100;
+}
+
+/* slow */
+/*.genie.expand .genie-step {
+  -moz-transition: background-position 2000ms ease-in-out;
+  -webkit-transition: background-position 2000ms ease-in-out;
+  -o-transition: background-position 2000ms ease-in-out;
+  -ms-transition: background-position 2000ms ease-in-out;
+  transition: background-position 2000ms ease-in-out;
+}
+.genie.collapse .genie-step {
+  -moz-transition: all 400ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+.genie.collapse.change-pace .genie-step {
+  -moz-transition: background-position 2000ms ease-in-out;
+  -webkit-transition: background-position 2000ms ease-in-out;
+  -o-transition: background-position 2000ms ease-in-out;
+  -ms-transition: background-position 2000ms ease-in-out;
+  transition: background-position 2000ms ease-in-out;
+}
+.genie.expand.change-pace .genie-step {
+  -moz-transition: all 400ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}*/
