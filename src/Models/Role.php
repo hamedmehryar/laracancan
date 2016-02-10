@@ -1,6 +1,7 @@
 <?php namespace Hamedmehryar\Laracancan\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Config;
 
 class Role extends Model
@@ -28,7 +29,11 @@ class Role extends Model
      */
     function resourcesByPermission($permission){
 
-        $permissionObj = Permission::where('name','=', $permission)->firstOrFail();;
+        try{
+            $permissionObj = Permission::where('name','=', $permission)->firstOrFail();
+        }catch (ModelNotFoundException $e){
+            return false;
+        }
         $roleResourcePermissions = $this->resourcePermissions()->where('permission_id', $permissionObj->id)->get();
         $resources = array();
         foreach($roleResourcePermissions as $p ){

@@ -161,6 +161,9 @@ trait LaracancanUserTrait{
             return true;
         }
         $resources = $this->resourcesByPermission('create');
+        if($resources == false){
+            return false;
+        }
         $resourceNames = array();
         foreach($resources as $r){
             $resourceNames[] = $r->name;
@@ -178,6 +181,9 @@ trait LaracancanUserTrait{
             return true;
         }
         $resources = $this->resourcesByPermission('read');
+        if($resources == false){
+            return false;
+        }
         $resourceNames = array();
         foreach($resources as $r){
             $resourceNames[] = $r->name;
@@ -197,6 +203,9 @@ trait LaracancanUserTrait{
             return true;
         }
         $resources = $this->resourcesByPermission('update');
+        if($resources == false){
+            return false;
+        }
         $resourceNames = array();
         foreach($resources as $r){
             $resourceNames[] = $r->name;
@@ -214,6 +223,9 @@ trait LaracancanUserTrait{
             return true;
         }
         $resources = $this->resourcesByPermission('delete');
+        if($resources == false){
+            return false;
+        }
         $resourceNames = array();
         foreach($resources as $r){
             $resourceNames[] = $r->name;
@@ -233,6 +245,9 @@ trait LaracancanUserTrait{
             return true;
         }
         $resources = $this->resourcesByPermission($permission);
+        if($resources == false){
+            return false;
+        }
         $resourceNames = array();
         foreach($resources as $r){
             $resourceNames[] = $r->name;
@@ -252,7 +267,8 @@ trait LaracancanUserTrait{
         $roles = $this->roles;
         $resourses = array();
         foreach($roles as $role){
-            $resourses =  array_merge($resourses, $role->resourcesByPermission($permission));
+            $roleResources = $role->resourcesByPermission($permission);
+            $resourses =  array_merge($resourses, $roleResources?$roleResources:array());
         }
         $resourses = array_unique($resourses);
         return $resourses;
