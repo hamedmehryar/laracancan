@@ -5,6 +5,7 @@ use Hamedmehryar\Laracancan\Models\Resource;
 use Hamedmehryar\Laracancan\Models\Role;
 use Hamedmehryar\Laracancan\Models\Resourcepermission;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -18,7 +19,7 @@ class RoleController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->canRead('role')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$resource = Resource::where('name', 'role')->first();
 			$roles = Role::active()->get();
 			$trashed_roles = Role::trashed()->get();
@@ -40,7 +41,7 @@ class RoleController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('role')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::role.add');
 		}else{
 			return "LOGOUT";
@@ -54,7 +55,7 @@ class RoleController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('role')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -105,7 +106,7 @@ class RoleController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user() != null && Auth::user()->canUpdate('role')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			return view('laracancan::role.edit')
@@ -124,7 +125,7 @@ class RoleController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->canUpdate('role')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -164,7 +165,7 @@ class RoleController extends Controller {
      */
     public function destroy($id)
     {
-        if(Auth::user() != null && Auth::user()->can('role', 'trash')){
+        if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
             $role = Role::find($id);
 
@@ -211,7 +212,7 @@ class RoleController extends Controller {
      */
      public function delete($id)
      {
-        if(Auth::user() != null && Auth::user()->canDelete('role')){
+        if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
             $role = Role::find($id);
             $role->trash = ModelStatus::DELETED;
@@ -231,7 +232,7 @@ class RoleController extends Controller {
      */
      public function restore($id)
      {
-         if(Auth::user() != null && Auth::user()->can('role', 'trash')){
+         if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
              $role = Role::find($id);
              $role->trash = ModelStatus::ACTIVE;
@@ -250,7 +251,7 @@ class RoleController extends Controller {
 	 */
 	public function manageRolePermissions($id)
 	{
-		if(Auth::user() != null && Auth::user()->can('role', 'manage_permissions')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			return view('laracancan::role.manage_permissions')
@@ -263,7 +264,7 @@ class RoleController extends Controller {
 
 	public function manageRolePermissionsAction($id){
 
-		if(Auth::user() != null && Auth::user()->can('role', 'manage_permissions')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			$role->resourcePermissions()->detach();

@@ -2,8 +2,8 @@
 @section('page_specific_styles')
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <!-- DATATABLES-->
-    <link rel="stylesheet" href=" {{ asset('dashboards/vendor/datatables-colvis/css/dataTables.colVis.css') }}">
-    <link rel="stylesheet" href=" {{ asset('dashboards/vendor/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/css/dataTables.colVis.css') }}">
+    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
     <style>
         li.training_grid {
             display: -moz-inline-stack;
@@ -40,11 +40,11 @@
                                      <thead>
                                          <tr>
                                              <th>#</th>
-                                             <th>@lang('resources.name')</th>
-                                             <th>@lang('resources.display_name_en')</th>
-                                             <th>@lang('resources.table_name')</th>
-                                             <th>@lang('resources.model_name')</th>
-                                             <th>@lang('resources.action')</th>
+                                             <th>Name</th>
+                                             <th>Display Name English</th>
+                                             <th>Display Name Persian</th>
+                                             <th>Display Name Pashto</th>
+                                             <th>Action</th>
 
                                          </tr>
                                      </thead>
@@ -62,10 +62,10 @@
                                                      <button type="button" class="btn btn-xs btn-primary dropdown-toggle notext small" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-tasks"></span>
                                                      </button>
                                                      <ul class="dropdown-menu pull-right">
-                                                         <li><a class="edit_resource" resource-id="{{$resource->id}}"><i class="fa fa-edit"></i>&nbsp;@lang('resources.edit')</a></li>
-                                                         <li><a class="manage_children" resource-id="{{$resource->id}}"><i class="fa fa-sitemap"></i>&nbsp;@lang('resources.manage_children')</a></li>
-                                                         <li><a class="delete_resource" resource-id="{{$resource->id}}" href="#" ><i class="fa fa-trash-o"></i>&nbsp;@lang('resources.delete')</a></li>
-                                                         {!!Form::open(array('route' => array('resource.destroy', $resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
+                                                         <li><a class="edit_resource" resource-id="{{$resource->id}}"><i class="fa fa-edit"></i>&nbsp;Edit</a></li>
+                                                         <li><a class="manage_children" resource-id="{{$resource->id}}"><i class="fa fa-sitemap"></i>&nbsp;Manage Children</a></li>
+                                                         <li><a class="delete_resource" resource-id="{{$resource->id}}" href="#" ><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
+                                                         {!!Form::open(array('route' => array('lcc.resource.destroy', $resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
                                                          {!!Form::close()!!}
                                                      </ul>
                                                  </div>
@@ -87,22 +87,22 @@
     <script>
         $('#add_resource_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("/resource/create", "modal-content", true);
+            getContentWithAjax("laracancan/resource/create", "modal-content", true);
         });
 
         $(".edit_resource").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("/resource/"+$(this).attr('resource-id')+"/edit", "modal-content", true);
+            getContentWithAjax("laracancan/resource/"+$(this).attr('resource-id')+"/edit", "modal-content", true);
         });
 
         $(".manage_children").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("/resource/"+$(this).attr('resource-id')+"/manage_children", "modal-content", true);
+            getContentWithAjax("laracancan/resource/"+$(this).attr('resource-id')+"/manage_children", "modal-content", true);
         });
 
         $(".delete_resource").confirm({
-            text: "@lang('resources.delete_resource_message')",
-            title: "@lang('resources.confirmation_required')",
+            text: "Are you sure you want to delete this item?",
+            title: "Confirmation Required",
             confirm: function(button) {
                 $('#delete_resource_'+$(button).attr('resource-id')).submit();
             },
@@ -119,14 +119,14 @@
     </script>
 
     <!-- Custom JS -->
-    <script src="{{ asset('dashboards/js/custom.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/js/custom.js') }}"></script>
     <!-- DATATABLES-->
-    <script src="{{ asset('dashboards/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('dashboards/vendor/datatables-colvis/js/dataTables.colVis.js') }}"></script>
-    <script src="{{ asset('dashboards/vendor/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('dashboards/vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
-    <script src="{{ asset('dashboards/js/demo/demo-datatable.js') }}"></script>
-    <script src="{{ asset('jquery.tablesorter/jquery.tablesorter.min.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatables-colvis/js/dataTables.colVis.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/vendor/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/js/demo/demo-datatable.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.min.js') }}"></script>
     <script>
         if($('table') != null)
             $('table').tablesorter();

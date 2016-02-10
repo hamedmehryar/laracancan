@@ -1,46 +1,46 @@
 <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">@lang('resources.edit_permission')</h4>
+     <h4 class="modal-title">Edit Permission</h4>
 </div>
 <div class="modal-body">
 
-    {!! Form::model($resource,['route' => array('resource.update', $resource->id),'method'=> 'put','data-parsley-validate'=> '']) !!}
+    {!! Form::model($resource,['route' => array('lcc.resource.update', $resource->id),'method'=> 'put','data-parsley-validate'=> '']) !!}
         <div class="form-group">
-        <label>@lang('resources.name')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>Name<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
-        <label>@lang('resources.display_name_en')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>Display Name English<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('display_name_en', null, ['class' => 'form-control']) !!}
         </div>
     <div class="form-group">
-        <label>@lang('resources.display_name_dr')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>Display Name Persian<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('display_name_pr', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        <label>@lang('resources.display_name_pa')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>Display Name Pashto<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('display_name_pa', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        <label>@lang('resources.table_name')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>DB Table<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('table_name', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        <label>@lang('resources.model_name')<span style="color:red; margin-left:2px;" >*</span></label>
+        <label>Model Name<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('model_name', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        <label>@lang('resources.icon_class')</label>
+        <label>FontAwesome Icon</label>
         {!! Form::text('icon_class', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        <label>@lang('resources.side_menue')</label>
+        <label>Show In Side Menu</label>
         {!! Form::radio('in_sidemenu', "1", true ) !!}&nbsp;Yes
         {!! Form::radio('in_sidemenu', "0",false ) !!}&nbsp;No
     </div>
     <div class="form-group">
-        <label>@lang('resources.is_reportable')</label>
+        <label>Reportable</label>
         {!! Form::radio('is_reportable', "1", true ) !!}&nbsp;Yes
         {!! Form::radio('is_reportable', "0",false ) !!}&nbsp;No
 

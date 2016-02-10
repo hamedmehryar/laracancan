@@ -1,10 +1,10 @@
 <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">@lang('permissions.add_new_permission')</h4>
+     <h4 class="modal-title">Add New Permission</h4>
  </div>
  <div class="modal-body">
 
-    {!! Form::open(['route' => 'resourcepermission.store']) !!}
+    {!! Form::open(['route' => 'lcc.resourcepermission.store']) !!}
      {!! Form::hidden('resource_id', $resource->id)!!}
      <div class="form-group">
         <select name="permissions[]" multiple style="width: 100%;" size="20" id="permissions">

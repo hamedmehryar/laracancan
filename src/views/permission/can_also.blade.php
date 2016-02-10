@@ -1,10 +1,10 @@
 <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">@lang('permissions.can_also_title', ['permission'=>'<label class="label label-default" style="color: #000000">'.$resourcePermission->permission->display_name.'</label>', 'resource'=>'<label class="label label-default" style="color: #000000">'.$resource->display_name_en.'</label>'])</h4>
+     <h4 class="modal-title">{{"Permission ".$resourcePermission->permission->display_name." On ".$resource->display_name_en." Can Also:"}}</h4>
  </div>
  <div class="modal-body">
 
-    {!! Form::open(['route' => array('resourcepermission.postCanAlso', $resourcePermission->id)]) !!}
+    {!! Form::open(['route' => array('lcc.resourcepermission.postCanAlso', $resourcePermission->id)]) !!}
      <div class="form-group">
         <select name="resourcePermissions[]" multiple style="width: 100%;" size="20" id="resourcepermissions">
             @foreach($canAlsoes as $rp)

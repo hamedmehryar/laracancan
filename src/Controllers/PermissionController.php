@@ -4,6 +4,7 @@ use Illuminate\Routing\Controller;
 use Hamedmehryar\Laracancan\Models\Resource;
 use Hamedmehryar\Laracancan\Models\Permission;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +17,7 @@ class PermissionController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->canRead('permission'))
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin'))
 		{
 			if(Input::get('ajax') == null){
 				$resource = Resource::where('name', 'permission')->first();
@@ -40,7 +41,7 @@ class PermissionController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('permission')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::permission.add');
 		}else{
 			return "LOGOUT";
@@ -54,7 +55,7 @@ class PermissionController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('permission')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -105,7 +106,7 @@ class PermissionController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user() != null && Auth::user()->canUpdate('permission')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$permission = Permission::find($id);
 			return view('laracancan::permission.edit')
@@ -124,7 +125,7 @@ class PermissionController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->canUpdate('permission')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [

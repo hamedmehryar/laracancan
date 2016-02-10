@@ -1,22 +1,20 @@
 <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">@lang('roles.add_new_permission')</h4>
+     <h4 class="modal-title">Add New Permission</h4>
 </div>
  <div class="modal-body">
-     <!-- search box starts here -->
-      @include('errors.error_list')
 
-    {!! Form::open(['url' => 'role/'.$role->id.'/manage_role_permissions']) !!}
+    {!! Form::open(['url' => 'laracancan/role/'.$role->id.'/manage_role_permissions']) !!}
      <div class="row">
          <div class="col-md-6">
              <select name="resource_id" style="width: 100%;" size="20" id="resource_id">
-                 @foreach(\App\Models\Resource::all() as $resource)
+                 @foreach(\Hamedmehryar\Laracancan\Models\Resource::all() as $resource)
                      <option value="{{$resource->id}}">{{$resource['display_name_en']}}</option>
                  @endforeach
              </select>
          </div>
          <div class="col-md-6">
-             @foreach(\App\Models\Resource::all() as $resource)
+             @foreach(\Hamedmehryar\Laracancan\Models\Resource::all() as $resource)
                  <select name="{{$resource->id}}_resourcepermissions[]" multiple style="width: 100%; display: none" size="20" id="resourcepermissions_{{$resource->id}}" class="resource-selects">
                      <?php
                         $roleResourcePermissions = $role->resourcePermissions;

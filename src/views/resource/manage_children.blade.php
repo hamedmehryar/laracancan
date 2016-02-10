@@ -1,9 +1,9 @@
 <div class="modal-header">
      <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h4 class="modal-title">@lang('resources.resource') <label class="label label-default" style="color: #000000">{{$resource->display_name_en}}</label>: @lang('resources.manage_children')</h4>
+     <h4 class="modal-title">Resource <label class="label label-default" style="color: #000000">{{$resource->display_name_en}}</label>: Manage Children</h4>
 </div>
  <div class="modal-body">
-    {!! Form::open(['route' => array('resource.postManageChildren', $resource->id)]) !!}
+    {!! Form::open(['route' => array('lcc.resource.postManageChildren', $resource->id)]) !!}
      <div class="row">
          <div class="col-md-12">
              <div class="row">
@@ -19,7 +19,7 @@
                  </div>
              </div>
              <hr style="margin-top: 0px;margin-bottom: 0px;">
-             @foreach(\App\Models\Resource::where('id', '!=', $resource->id)->get() as $r)
+             @foreach(\Hamedmehryar\Laracancan\Models\Resource::where('id', '!=', $resource->id)->get() as $r)
                  <div class="row">
                      <div class="col-md-6">
                          {!!Form::checkbox( 'children[]', $r->id ,$r->isChildOf($resource->id),['id'=>'resource'.$r->id, 'class'=>'resourcecheckbox', 'data-resource-id'=> $r->id] )!!}<label for="{{'resource'.$r->id}}">&nbsp;{{$r->display_name_en}}</label>

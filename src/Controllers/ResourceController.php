@@ -3,6 +3,7 @@
 use Illuminate\Routing\Controller;
 use Hamedmehryar\Laracancan\Models\Resource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,7 +16,7 @@ class ResourceController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->canRead('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$resource = Resource::where('name', 'resource')->first();
 			$resources = Resource::all();
 
@@ -35,7 +36,7 @@ class ResourceController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::resource.add');
 		}else{
 			return "LOGOUT";
@@ -49,7 +50,7 @@ class ResourceController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->canCreate('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$user = Auth::user();
 			$input = Input::all();
@@ -113,7 +114,7 @@ class ResourceController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user()!= null && Auth::user()->canUpdate('resource')) {
+		if(Auth::user()!= null && Auth::user()->id == Config::get('laracancan.super_admin')) {
 			$resource = Resource::find($id);
 			return view('laracancan::resource.edit')
 				->with('resource', $resource);
@@ -130,7 +131,7 @@ class ResourceController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->canUpdate('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$user = Auth::user();
 			$input = Input::all();
@@ -184,7 +185,7 @@ class ResourceController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		if(Auth::user()!= null && Auth::user()->canDelete('resource')){
+		if(Auth::user()!= null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			Resource::destroy($id);
 			return redirect()->back()->with('flash_success', 'Resource deleted Successfully !');
 		}else{
@@ -193,7 +194,7 @@ class ResourceController extends Controller {
 	}
 
 	public function manageChildren($id){
-		if(Auth::user() != null && Auth::user()->canUpdate('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$resource = Resource::find($id);
 			return view('laracancan::resource.manage_children')
 				->with('resource', $resource);
@@ -202,7 +203,7 @@ class ResourceController extends Controller {
 		}
 	}
 	public function postManageChildren($id){
-		if(Auth::user() != null && Auth::user()->canUpdate('resource')){
+		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$children = Input::get('children', array());
 			$resource = Resource::find($id);
 			$resource->childResources()->detach();
@@ -219,7 +220,7 @@ class ResourceController extends Controller {
 					$potentialMutualResource->childResources()->attach([$id => ['pivot'=> $pivot]]);
 				}
 			}
-			return redirect()->back()->with('flash_success', trans('resources.children_add_success'));
+			return redirect()->back()->with('flash_success', 'Records Updated Successfully');
 		}else{
 			return response(view('errors.401'), 401);
 		}

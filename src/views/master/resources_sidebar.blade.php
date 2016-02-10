@@ -1,17 +1,25 @@
-<ul class="nav navbar-nav side-nav">
-        <?php $resources = Laracancan::readableResources(); ?>
+<ul class="nav">
         <li class="nav-heading ">
                 <span>Navigation</span>
         </li>
-        <!-- Iterates over all sidebar items-->
-        @foreach($resources as $resource)
-                @if($resource->in_sidemenu == 1)
-                        <li class="">
-                                <a href="{{url($resource->name)}}" title="{{$resource->name}}">
-                                        <em class="fa fa-{{$resource->icon_class}}"></em>
-                                        <span>{{$resource['display_name_en']}}</span>
-                                </a>
-                        </li>
-                @endif
-        @endforeach
+
+        <li class="">
+                <a href="{{url('lcc.role')}}" title="Roles">
+                        <em class="fa fa-user"></em>
+                        <span>Roles</span>
+                </a>
+        </li>
+        <li class="">
+                <a href="{{url('lcc.resource')}}" title="Resources">
+                        <em class="fa fa-database"></em>
+                        <span>Resources</span>
+                </a>
+        </li>
+        <li class="">
+                <a href="{{url('lcc.permission')}}" title="Permissions">
+                        <em class="fa fa-key"></em>
+                        <span>Permissions</span>
+                </a>
+        </li>
+
 </ul>
