@@ -10,15 +10,8 @@ section{
 /* ========================================================================
    Component: top-navbar
  ========================================================================== */
-.topnavbar {
-    background-color: #4A305F;
-}
 .topnavbar .navbar-header {
     background-color: transparent;
-    background-image: -webkit-linear-gradient(left, #4A305F 0%, #4A305F 100%);
-    background-image: -o-linear-gradient(left, #4A305F 0%, #4A305F 100%);
-    background-image: linear-gradient(to right, #4A305F 0%, #4A305F 100%);
-    background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec2121', endColorstr='#ffc3203f', GradientType=1);
 }
 @media only screen and (min-width: 768px) {
@@ -48,10 +41,6 @@ section{
     color: #ffffff;
 }
 .topnavbar .nav-wrapper {
-    background: -webkit-radial-gradient(circle, rgb(35,29,24) 6%, rgba(0,0,0,0) 52%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), #4A305F;
-    background: -moz-radial-gradient(circle, rgb(35,29,24) 6%, rgba(0,0,0,0) 52%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), #4A305F;
-    background: radial-gradient(circle, rgb(35,29,24) 6%, rgba(0,0,0,0) 52%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), #4A305F;
-    background-position: 5px 5px, 5px 5px, auto auto, 0 1em;
     -webkit-background-origin: padding-box;
     background-origin: padding-box;
     -webkit-background-clip: border-box;

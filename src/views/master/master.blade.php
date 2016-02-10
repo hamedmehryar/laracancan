@@ -94,7 +94,7 @@
         <!-- START Sidebar (left)-->
         <div class="aside-inner">
             <nav class="sidebar">
-                @include('templates.resources_sidebar')
+                @include('laracancan::master.resources_sidebar')
             </nav>
         </div>
         <!-- END Sidebar (left)-->
@@ -103,7 +103,7 @@
     <section>
         <!-- Page content-->
         <div class="content-wrapper">
-            @include('templates.flash')
+            @include('laracancan::master.flash')
             @yield('content')
         </div>
     </section>
