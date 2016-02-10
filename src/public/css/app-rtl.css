@@ -162,7 +162,6 @@ hr {
 }
 
 .btn.btn-link {
-  box-shadow: none;
   border: 0;
 }
 
@@ -375,7 +374,6 @@ body {
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #ffffff;
-  box-shadow: 2px 2px 40px #888888;
 }
 
 .wrapper > .aside .aside-inner {
@@ -1105,7 +1103,6 @@ body {
 .nav-wrapper {
   padding: 0 15px;
   background-color: transparent;
-  box-shadow: 2px 2px 40px #888888;
 }
 
 .nav-wrapper .nav.navbar-nav {
@@ -1230,7 +1227,6 @@ body {
 
   .nav-wrapper {
     position: relative;
-    box-shadow: 2px 2px 40px #888888;
     z-index: 10;
   }
 
@@ -2105,7 +2101,7 @@ body {
 }
 
 .text-dark {
-  color: #3a3f51;
+  color: #C4C6C7;
 }
 
 .text-alpha-inverse {
@@ -2125,7 +2121,7 @@ body {
 }
 
 .text-gray-dark {
-  color: #3a3f51;
+  color: #C4C6C7;
 }
 
 .text-gray {
@@ -2263,7 +2259,7 @@ body {
 }
 
 .bg-danger-dark {
-  background-color: #ABC1CE;
+  background-color: #C4C6C7;
   color: #ffffff !important;
 }
 
@@ -2377,7 +2373,7 @@ body {
 }
 
 .bg-gray-dark {
-  background-color: #3a3f51;
+  background-color: #C4C6C7;
   color: #ffffff !important;
 }
 
@@ -2762,15 +2758,4 @@ body {
 .bottom_buttons{
   float: left;
   margin: 10px;
-}
-.breadcrumb{
-  box-shadow:  2px 2px 40px #888888;
-}
-.panel.panel-promote{
-  box-shadow: 2px 2px 40px #888888;
-}
-
-/** Profile icon css class */
-.profile_pic_icon {
-  margin-right: -45px;
 }

@@ -94,17 +94,17 @@
     <script>
         $('#add_role_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/role/create", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccrole/create')}}", "modal-content", true);
         });
 
         $(".edit_role").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/role/"+$(this).attr('role-id')+"/edit", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccrole')}}/"+$(this).attr('role-id')+"/edit", "modal-content", true);
         });
 
         $(".manage_role_permissions").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/role/"+$(this).attr('role-id')+"/manage_role_permissions", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccrole')}}/"+$(this).attr('role-id')+"/manage_role_permissions", "modal-content", true);
         });
 
         $(".delete_role").confirm({

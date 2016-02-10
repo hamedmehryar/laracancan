@@ -65,7 +65,7 @@
                                                          <li><a class="edit_resource" resource-id="{{$resource->id}}"><i class="fa fa-edit"></i>&nbsp;Edit</a></li>
                                                          <li><a class="manage_children" resource-id="{{$resource->id}}"><i class="fa fa-sitemap"></i>&nbsp;Manage Children</a></li>
                                                          <li><a class="delete_resource" resource-id="{{$resource->id}}" href="#" ><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
-                                                         {!!Form::open(array('route' => array('lccresource.destroy', $resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
+                                                         {!!Form::open(array('url' => url("laracancan/lccresource")."/".$resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
                                                          {!!Form::close()!!}
                                                      </ul>
                                                  </div>
@@ -83,21 +83,21 @@
             <!-- /.col-lg-12 -->
 @stop
 @section('page_specific_scripts')
-    <script src="{{ asset('jquery.confirm-master/jquery.confirm.min.js') }}"></script>
+    <script src="{{ asset('hamedmehryar/laracancan/jquery.confirm-master/jquery.confirm.min.js') }}"></script>
     <script>
         $('#add_resource_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/resource/create", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccresource/create')}}", "modal-content", true);
         });
 
         $(".edit_resource").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/resource/"+$(this).attr('resource-id')+"/edit", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccresource')}}/"+$(this).attr('resource-id')+"/edit", "modal-content", true);
         });
 
         $(".manage_children").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("laracancan/resource/"+$(this).attr('resource-id')+"/manage_children", "modal-content", true);
+            getContentWithAjax("{{url('laracancan/lccresource')}}/"+$(this).attr('resource-id')+"/manage_children", "modal-content", true);
         });
 
         $(".delete_resource").confirm({

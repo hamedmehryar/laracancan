@@ -20,7 +20,7 @@ class RoleController extends Controller {
 	public function index()
 	{
 		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
-			$roles = Role::active()->get();
+			$roles = Role::all();
 
 			return view('laracancan::role.list')
 				->with('roles', $roles);

@@ -6,7 +6,7 @@ body,
   background-color: #f5f7fa;
 }
 .wrapper > .aside {
-  background-color: #3a3f51;
+  background-color: #C4C6C7;
 }
 /* ========================================================================
    Component: top-navbar
@@ -85,7 +85,7 @@ body,
    Component: sidebar
  ========================================================================== */
 .sidebar {
-  background-color: #3a3f51;
+  background-color: #C4C6C7;
 }
 .sidebar .nav-heading {
   color: #919da8;
@@ -121,7 +121,7 @@ body,
   border-left-color: #1797be;
 }
 .sidebar-subnav {
-  background-color: #3a3f51;
+  background-color: #C4C6C7;
 }
 .sidebar-subnav > .sidebar-subnav-header {
   color: #e1e2e3;
