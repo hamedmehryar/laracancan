@@ -1,4 +1,4 @@
-<ul class="nav">
+<ul class="nav navbar-nav side-nav">
         <?php $resources = Laracancan::readableResources(); ?>
         <li class="nav-heading ">
                 <span>Navigation</span>
