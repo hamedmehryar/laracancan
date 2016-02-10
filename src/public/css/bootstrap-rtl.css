@@ -1733,7 +1733,7 @@ a.text-warning:hover {
 }
 
 a.text-danger:hover {
-  color: #ec2121;
+  color: #ABC1CE;
 }
 
 .bg-primary {
@@ -3683,7 +3683,7 @@ select[multiple].form-group-lg .form-control {
 }
 
 .has-error .form-control:focus {
-  border-color: #ec2121;
+  border-color: #ABC1CE;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f8aeae;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f8aeae;
 }
@@ -5960,7 +5960,7 @@ a.label:focus {
 
 .label-danger[href]:hover,
 .label-danger[href]:focus {
-  background-color: #ec2121;
+  background-color: #ABC1CE;
 }
 
 .badge {

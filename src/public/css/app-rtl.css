@@ -15,13 +15,6 @@
 /* ========================================================================
    Component: bootstrap-reset.less
  ========================================================================== */
-body{
-  background-image: url("../../main/img/promote/PromoteRTL.jpg");no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .glyphicon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -1291,7 +1284,6 @@ body {
 .sidebar {
   height: 100%;
   padding-bottom: 20px;
-  background-image: url("/images/side-pattern.png");
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -2271,7 +2263,7 @@ body {
 }
 
 .bg-danger-dark {
-  background-color: #ec2121;
+  background-color: #ABC1CE;
   color: #ffffff !important;
 }
 

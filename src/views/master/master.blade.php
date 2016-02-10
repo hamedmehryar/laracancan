@@ -43,8 +43,6 @@
     <link href="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/themes/blue/style.css') }}" rel="stylesheet">
     <link href="{{asset('hamedmehryar/laracancan/css/pace.css')}}" rel="stylesheet">
     <link href=" {{ asset('hamedmehryar/laracancan/bootstrap-multi-select/css/bootstrap-multiselect.css') }}" rel="stylesheet">
-    <link href="{{ asset('hamedmehryar/laracancan/other/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('hamedmehryar/laracancan/other/genie/genie.css') }}" rel="stylesheet">
     @yield('page_specific_styles')
 </head>
 
@@ -186,9 +184,6 @@
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('hamedmehryar/laracancan/js/app.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.js') }}"></script>
-
-<script src="{{ asset('hamedmehryar/laracancan/other/moment/min/moment-with-locales.min.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/other/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/pace.min.js')}}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.confirm-master/jquery.confirm.min.js') }}"></script>
 @yield('page_specific_scripts')

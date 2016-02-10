@@ -12,7 +12,7 @@ section{
  ========================================================================== */
 .topnavbar .navbar-header {
     background-color: transparent;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec2121', endColorstr='#ffc3203f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
 }
 @media only screen and (min-width: 768px) {
     .topnavbar .navbar-header {
@@ -47,16 +47,16 @@ section{
     background-clip: border-box;
     -webkit-background-size: 5px 5px;
     background-size: 5px 5px;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec2121', endColorstr='#ffc3203f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
 }
 @media only screen and (min-width: 768px) {
     .topnavbar {
-        background-color: #ec2121;
-        background-image: -webkit-linear-gradient(left, #ec2121 0%, #c3203f 100%);
-        background-image: -o-linear-gradient(left, #ec2121 0%, #c3203f 100%);
-        background-image: linear-gradient(to right, #ec2121 0%, #c3203f 100%);
+        background-color: #ABC1CE;
+        background-image: -webkit-linear-gradient(left, #ABC1CE 0%, #c3203f 100%);
+        background-image: -o-linear-gradient(left, #ABC1CE 0%, #c3203f 100%);
+        background-image: linear-gradient(to right, #ABC1CE 0%, #c3203f 100%);
         background-repeat: repeat-x;
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec2121', endColorstr='#ffc3203f', GradientType=1);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffABC1CE', endColorstr='#ffc3203f', GradientType=1);
     }
     .topnavbar .navbar-nav > .open > a,
     .topnavbar .navbar-nav > .open > a:hover,
