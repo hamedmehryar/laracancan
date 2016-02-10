@@ -33,55 +33,27 @@
             <!-- START navbar header-->
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">
-                    <div class="brand-logo" style="color: white;font-weight: bold;font-size: 22px; padding-top: 16px; padding-bottom: 16px;">
-                        <img src="{{asset('hamedmehryar/laracancan/images/logo.png')}}">
-                        LaraCanCan
-                    </div>
                     <div class="brand-logo-collapsed">
-                        <img src="{{asset('hamedmehryar/laracancan/images/logo.png')}}" alt="App Logo" class="img-responsive">
+                        <img src="{{asset('hamedmehryar/laracancan/images/logo-large.png')}}" alt="App Logo" class="img-responsive">
                     </div>
                 </a>
             </div>
-            <!-- END navbar header-->
-            <!-- START Nav wrapper-->
-            <div class="nav-wrapper">
-                <!-- START Left navbar-->
-                <ul class="nav navbar-nav">
-                    <li>
-                        <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                        <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
-                            <em class="fa fa-navicon"  data-toggle="tooltip" title="Side Bar" data-placement="bottom"></em>
-                        </a>
-                        <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                        <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
-                            <em class="fa fa-navicon"  data-toggle="tooltip" title="Side Bar" data-placement="bottom"></em>
-                        </a>
-                    </li>
-                </ul>
-                <!-- END Left navbar-->
-            </div>
-            <!-- END Nav wrapper-->
         </nav>
         <!-- END Top Navbar-->
 
-    <!-- sidebar-->
-    <aside class="aside">
-        <!-- START Sidebar (left)-->
-        <div class="aside-inner">
-            <nav class="sidebar">
-                @include('laracancan::master.resources_sidebar')
-            </nav>
-        </div>
-        <!-- END Sidebar (left)-->
-    </aside>
 
-    <section>
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+            @include('laracancan::master.resources_sidebar')
+        </nav>
+
         <!-- Page content-->
-        <div class="content-wrapper">
-            @include('templates.flash')
-            @yield('content')
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                @include('templates.flash')
+                @yield('content')
+            </div>
         </div>
-    </section>
+
 
     <footer>
         <span id="copyright">
