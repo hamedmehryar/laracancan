@@ -4,7 +4,7 @@
  </div>
  <div class="modal-body">
 
-    {!! Form::open(['route' => array('lcc.resourcepermission.postCanAlso', $resourcePermission->id)]) !!}
+    {!! Form::open(['route' => array('lccresourcepermission.postCanAlso', $resourcePermission->id)]) !!}
      <div class="form-group">
         <select name="resourcePermissions[]" multiple style="width: 100%;" size="20" id="resourcepermissions">
             @foreach($canAlsoes as $rp)

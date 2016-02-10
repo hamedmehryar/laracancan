@@ -3,7 +3,7 @@
      <h4 class="modal-title">Resource <label class="label label-default" style="color: #000000">{{$resource->display_name_en}}</label>: Manage Children</h4>
 </div>
  <div class="modal-body">
-    {!! Form::open(['route' => array('lcc.resource.postManageChildren', $resource->id)]) !!}
+    {!! Form::open(['route' => array('lccresource.postManageChildren', $resource->id)]) !!}
      <div class="row">
          <div class="col-md-12">
              <div class="row">

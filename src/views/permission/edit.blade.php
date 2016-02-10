@@ -5,7 +5,7 @@
 
 <div class="modal-body">
 
-    {!! Form::model($permission, array('route' => array('lcc.permission.update', $permission->id), 'method'=> 'put','data-parsley-validate'=> '')) !!}
+    {!! Form::model($permission, array('route' => array('lccpermission.update', $permission->id), 'method'=> 'put','data-parsley-validate'=> '')) !!}
 
      <div class="form-group">
         <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>

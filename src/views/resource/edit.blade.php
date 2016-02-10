@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
 
-    {!! Form::model($resource,['route' => array('lcc.resource.update', $resource->id),'method'=> 'put','data-parsley-validate'=> '']) !!}
+    {!! Form::model($resource,['route' => array('lccresource.update', $resource->id),'method'=> 'put','data-parsley-validate'=> '']) !!}
         <div class="form-group">
         <label>Name<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('name', null, ['class' => 'form-control']) !!}

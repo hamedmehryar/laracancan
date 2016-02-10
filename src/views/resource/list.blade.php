@@ -65,7 +65,7 @@
                                                          <li><a class="edit_resource" resource-id="{{$resource->id}}"><i class="fa fa-edit"></i>&nbsp;Edit</a></li>
                                                          <li><a class="manage_children" resource-id="{{$resource->id}}"><i class="fa fa-sitemap"></i>&nbsp;Manage Children</a></li>
                                                          <li><a class="delete_resource" resource-id="{{$resource->id}}" href="#" ><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
-                                                         {!!Form::open(array('route' => array('lcc.resource.destroy', $resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
+                                                         {!!Form::open(array('route' => array('lccresource.destroy', $resource->id), 'method' => 'delete', 'id'=>'delete_resource_'.$resource->id))!!}
                                                          {!!Form::close()!!}
                                                      </ul>
                                                  </div>

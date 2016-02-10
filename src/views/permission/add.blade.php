@@ -6,7 +6,7 @@
      <!-- search box starts here -->
       @include('errors.error_list')
 
-    {!! Form::open(['route' => 'lcc.permission.store']) !!}
+    {!! Form::open(['route' => 'lccpermission.store']) !!}
      <div class="form-group">
     <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
      {!! Form::text('name', null, ['class' => 'form-control']) !!}

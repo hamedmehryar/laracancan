@@ -109,7 +109,7 @@
                                                                      </button>
                                                                      <ul class="dropdown-menu pull-right">
                                                                          <li><a class="delete_resourcepermission" permission-id="{{$permission->permission->id}}" resource-id="{{$resource->id}}" href="#"><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
-                                                                         {!!Form::open(array('route' => array('lcc.resourcepermission.destroy', $permission->permission->id), 'method' => 'delete', 'id'=>'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id))!!}
+                                                                         {!!Form::open(array('route' => array('lccresourcepermission.destroy', $permission->permission->id), 'method' => 'delete', 'id'=>'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id))!!}
                                                                          {!! Form::hidden('resource_id', $resource->id) !!}
                                                                          {!!Form::close()!!}
                                                                          <li><a class="can_also" permission-id="{{$permission->id}}"><i class="fa fa-sitemap"></i>Can Also..</a></li>

@@ -70,7 +70,7 @@
                                                              <li><a class="edit_role" role-id="{{$role->id}}"><i class="fa fa-edit"></i> Edit</a></li>
                                                              <li><a class="manage_role_permissions" role-id="{{$role->id}}"><i class="fa fa-key"></i> Manage Permissions</a></li>
                                                              <li><a class="delete_role" role-id="{{$role->id}}" href="#" ><i class="fa fa-trash-o"></i> Delete</a></li>
-                                                             {!!Form::open(array('route' => array('lcc.role.destroy', $role->id), 'method' => 'delete', 'id'=>'delete_role_'.$role->id))!!}
+                                                             {!!Form::open(array('route' => array('lccrole.destroy', $role->id), 'method' => 'delete', 'id'=>'delete_role_'.$role->id))!!}
                                                              {!!Form::close()!!}
                                                          </ul>
                                                      </div>

@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
 
-    {!! Form::open(['route' => 'lcc.resource.store']) !!}
+    {!! Form::open(['route' => 'lccresource.store']) !!}
         <div class="form-group">
         <label>Name<span style="color:red; margin-left:2px;" >*</span></label>
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
