@@ -8,6 +8,8 @@
  * 
  */
 
+var chatUploading = false;
+var timeoutCount = 0;
 $(document).ajaxError(function myErrorHandler(event, xhr, ajaxOptions, thrownError) {
   if(xhr.status != 500 && thrownError === "timeout"){
     timeoutCount++;
@@ -69,6 +71,32 @@ $(document).ajaxError(function myErrorHandler(event, xhr, ajaxOptions, thrownErr
 
 })(window, document, window.jQuery);
 
+/**=========================================================
+ * Module: clear-storage.js
+ * Removes a key from the browser storage via element click
+ =========================================================*/
+
+(function($, window, document){
+  'use strict';
+
+  var Selector = '[data-reset-key]';
+
+  $(document).on('click', Selector, function (e) {
+      e.preventDefault();
+      var key = $(this).data('resetKey');
+      
+      if(key) {
+        $.localStorage.remove(key);
+        // reload the page
+        window.location.reload();
+      }
+      else {
+        $.error('No storage key specified for reset.');
+      }
+  });
+
+}(jQuery, window, document));
+
 // GLOBAL CONSTANTS
 // ----------------------------------- 
 
@@ -102,6 +130,135 @@ $(document).ajaxError(function myErrorHandler(event, xhr, ajaxOptions, thrownErr
   };
 
 })(window, document, window.jQuery);
+
+
+// TRANSLATION
+// ----------------------------------- 
+
+(function(window, document, $, undefined){
+
+  var preferredLang = 'en';
+  var pathPrefix    = 'i18n'; // folder of json files
+  var packName      = 'site';
+  var storageKey    = 'jq-appLang';
+
+  $(function(){
+
+    if ( ! $.fn.localize ) return;
+
+    // detect saved language or use default
+    var currLang = $.localStorage.get(storageKey) || preferredLang;
+    // set initial options
+    var opts = {
+        language: currLang,
+        pathPrefix: pathPrefix,
+        callback: function(data, defaultCallback){
+          $.localStorage.set(storageKey, currLang); // save the language
+          defaultCallback(data);
+        }
+      };
+
+    // Set initial language
+
+    // Listen for changes
+    $('[data-set-lang]').on('click', function(){
+
+      currLang = $(this).data('setLang');
+
+      if ( currLang ) {
+        
+        opts.language = currLang;
+
+
+        activateDropdown($(this));
+      }
+
+    });
+    
+
+    function setLanguage(options) {
+      $("[data-localize]").localize(packName, options);
+    }
+
+    // Set the current clicked text as the active dropdown text
+    function activateDropdown(elem) {
+      var menu = elem.parents('.dropdown-menu');
+      if ( menu.length ) {
+        var toggle = menu.prev('button, a');
+        toggle.text ( elem.text() );
+      }
+    }
+
+  });
+
+})(window, document, window.jQuery);
+
+// NAVBAR SEARCH
+// ----------------------------------- 
+
+
+(function(window, document, $, undefined){
+
+  $(function(){
+    
+    var navSearch = new navbarSearchInput();
+    
+    // Open search input 
+    var $searchOpen = $('[data-search-open]');
+
+    $searchOpen
+      .on('click', function (e) { e.stopPropagation(); })
+      .on('click', navSearch.toggle);
+
+    // Close search input
+    var $searchDismiss = $('[data-search-dismiss]');
+    var inputSelector = '.navbar-form input[type="text"]';
+
+    $(inputSelector)
+      .on('click', function (e) { e.stopPropagation(); })
+      .on('keyup', function(e) {
+        if (e.keyCode == 27) // ESC
+          navSearch.dismiss();
+      });
+      
+    // click anywhere closes the search
+    $(document).on('click', navSearch.dismiss);
+    // dismissable options
+    $searchDismiss
+      .on('click', function (e) { e.stopPropagation(); })
+      .on('click', navSearch.dismiss);
+
+  });
+
+  var navbarSearchInput = function() {
+    var navbarFormSelector = 'form.navbar-form';
+    return {
+      toggle: function() {
+        
+        var navbarForm = $(navbarFormSelector);
+
+        navbarForm.toggleClass('open');
+        
+        var isOpen = navbarForm.hasClass('open');
+        
+        navbarForm.find('input')[isOpen ? 'focus' : 'blur']();
+
+      },
+
+      dismiss: function() {
+        $(navbarFormSelector)
+          .removeClass('open')      // Close control
+          .find('input[type="text"]').blur() // remove focus
+          .val('')                    // Empty input
+          ;
+      }
+    };
+
+  }
+
+})(window, document, window.jQuery);
+// SIDEBAR
+// ----------------------------------- 
 
 
 (function(window, document, $, undefined){

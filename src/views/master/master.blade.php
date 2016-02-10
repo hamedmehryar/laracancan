@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/sb-admin/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/sb-admin/css/sb-admin.css') }}">
 
-    <!-- DATATABLES-->
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/datatables-colvis/css/dataTables.colVis.css') }}">
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('hamedmehryar/laracancan/css/dataTables.responsive.css')}}">
 
 
@@ -126,13 +123,10 @@
 <script src="{{ asset('hamedmehryar/laracancan/js/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery-ui-1.11.4.custom/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/bootstrap/dist/js/bootstrap.js') }}"></script>
+<script src="{{ asset('hamedmehryar/laracancan/jQuery-Storage-API/jquery.storageapi.js') }}"></script>
 <script src="{{ asset('js/jquery.form.min.js') }}"></script>
 <!-- DATATABLES-->
 <script src="{{ asset('hamedmehryar/laracancan/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/datatables-colvis/js/dataTables.colVis.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/js/dataTables.responsive.js')}}"></script>
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('hamedmehryar/laracancan/js/app.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.js') }}"></script>
