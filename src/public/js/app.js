@@ -113,10 +113,10 @@ $(document).ajaxError(function myErrorHandler(event, xhr, ajaxOptions, thrownErr
     'green':                  '#37bc9b',
     'pink':                   '#f532e5',
     'purple':                 '#7266ba',
-    'dark':                   '#C4C6C7',
+    'dark':                   '#6A7F8A',
     'yellow':                 '#fad732',
     'gray-darker':            '#232735',
-    'gray-dark':              '#C4C6C7',
+    'gray-dark':              '#6A7F8A',
     'gray':                   '#dde6e9',
     'gray-light':             '#e4eaec',
     'gray-lighter':           '#edf1f2'

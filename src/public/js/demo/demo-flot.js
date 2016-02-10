@@ -88,7 +88,7 @@
       ]
     }, {
       "label": "Overall",
-      "color": "#C4C6C7",
+      "color": "#6A7F8A",
       "data": [
         ["1", 16],
         ["2", 18],
