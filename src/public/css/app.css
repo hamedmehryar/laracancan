@@ -293,6 +293,7 @@ body {
   height: 100%;
 }
 .wrapper {
+  background-color: #E2E2E2;
   position: relative;
   width: 100%;
   height: auto;
