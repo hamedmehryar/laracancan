@@ -102,7 +102,7 @@
         <!-- Page content-->
         <div class="content-wrapper">
             @include('laracancan::master.flash')
-            @yield('content')
+            @yield('content', '<img src="'.asset('hamedmehryar/laracancan/img/logo-large.png').'"/>')
         </div>
     </section>
 
