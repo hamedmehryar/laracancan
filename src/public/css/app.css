@@ -312,7 +312,7 @@ body {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
-  background-color: #DAD6EA;
+  background-color: #FFFFFF;
 }
 .wrapper > .aside .aside-inner {
   padding-top: 110px;
@@ -341,7 +341,7 @@ body {
   margin-bottom: 60px !important;
 }
 .wrapper > footer {
-  background-color: rgb(112, 132, 141);
+  background-color: rgb(201, 213, 219);
   position: absolute;
   left: 0;
   right: 0;
@@ -983,10 +983,10 @@ body {
 @media only screen and (min-width: 768px) {
   .topnavbar {
     border: 0;
-    background-color: #223268;
-    background-image: -webkit-linear-gradient(left, #223268 0%, #223268 100%);
-    background-image: -o-linear-gradient(left, #223268 0%, #223268 100%);
-    background-image: linear-gradient(to right, #223268 0%, #223268 100%);
+    background-color: #CAD6DC;
+    background-image: -webkit-linear-gradient(left, #CAD6DC 0%, #223268 100%);
+    background-image: -o-linear-gradient(left, #CAD6DC 0%, #223268 100%);
+    background-image: linear-gradient(to right, #CAD6DC 0%, #223268 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff23b7e5', endColorstr='#ff223268', GradientType=1);
   }
