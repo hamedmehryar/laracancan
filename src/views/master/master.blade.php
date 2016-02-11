@@ -106,12 +106,6 @@
         </div>
     </section>
 
-    <footer>
-        <span id="copyright">
-            <div class="pull-left"><i class="fa fa-copyright"></i>LaraCanCan 2015</div>
-        </span>
-    </footer>
-
 </div>
 <!-- general modal starts here -->
 <div id="general_modal" class="modal fade" role="dialog">

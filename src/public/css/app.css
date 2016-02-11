@@ -333,25 +333,8 @@ body {
 .wrapper > section {
   overflow-y: scroll;
   position: relative;
-  height: -moz-calc(100vh - 120px);
-  height: -webkit-calc(100vh - 120px);
-  height: calc(100vh - 120px);
   margin-left: 0;
   z-index: 111;
-  margin-bottom: 60px !important;
-}
-.wrapper > footer {
-  background-color: rgb(201, 213, 219);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 60px;
-  padding: 20px;
-  z-index: 109;
-}
-.wrapper > footer > p {
-  margin: 0;
 }
 .modal-open .wrapper {
   z-index: 0;
@@ -423,8 +406,7 @@ body {
   .wrapper > .aside .aside-inner {
     padding-top: 55px;
   }
-  .wrapper > section,
-  .wrapper > footer {
+  .wrapper > section {
     margin-left: 220px;
   }
   .wrapper > section.has-sidebar-right {
@@ -438,8 +420,7 @@ body {
   .wrapper > .aside {
     margin-left: -220px;
   }
-  .aside-toggled .wrapper > section,
-  .aside-toggled .wrapper > footer {
+  .aside-toggled .wrapper > section {
     margin-left: 220px;
   }
   .aside-toggled .wrapper > .aside {
@@ -450,8 +431,7 @@ body {
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  .csstransforms3d .wrapper > section,
-  .csstransforms3d .wrapper > footer {
+  .csstransforms3d .wrapper > section {
     margin-left: 0;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -469,8 +449,7 @@ body {
     -o-transition: -o-transform 0.3s ease;
     transition: transform 0.3s ease;
   }
-  .csstransforms3d .aside-toggled .wrapper > section,
-  .csstransforms3d .aside-toggled .wrapper > footer {
+  .csstransforms3d .aside-toggled .wrapper > section {
     -webkit-transform: translate3d(220px, 0, 0);
     transform: translate3d(220px, 0, 0);
   }
@@ -483,8 +462,7 @@ body {
   .aside-collapsed .wrapper > .aside {
     margin-left: -70px;
   }
-  .aside-collapsed.aside-toggled .wrapper > section,
-  .aside-collapsed.aside-toggled .wrapper > footer {
+  .aside-collapsed.aside-toggled .wrapper > section {
     margin-left: 70px;
   }
   .aside-collapsed.aside-toggled .wrapper > .aside {
@@ -495,8 +473,7 @@ body {
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  .csstransforms3d .aside-collapsed .wrapper > section,
-  .csstransforms3d .aside-collapsed .wrapper > footer {
+  .csstransforms3d .aside-collapsed .wrapper > section {
     margin-left: 0;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -514,8 +491,7 @@ body {
     -o-transition: -o-transform 0.3s ease;
     transition: transform 0.3s ease;
   }
-  .csstransforms3d .aside-collapsed.aside-toggled .wrapper > section,
-  .csstransforms3d .aside-collapsed.aside-toggled .wrapper > footer {
+  .csstransforms3d .aside-collapsed.aside-toggled .wrapper > section {
     -webkit-transform: translate3d(70px, 0, 0);
     transform: translate3d(70px, 0, 0);
   }
@@ -535,8 +511,7 @@ body {
   margin-left: 70px;
 }
 @media only screen and (min-width: 768px) {
-  .aside-collapsed .wrapper > section,
-  .aside-collapsed .wrapper > footer {
+  .aside-collapsed .wrapper > section {
     margin-left: 70px;
   }
 }
@@ -609,12 +584,6 @@ body {
 /* ========================================================================
    Component: layout-extra.less
  ========================================================================== */
-.hidden-footer .wrapper > footer {
-  display: none;
-}
-.hidden-footer .wrapper > section {
-  margin-bottom: 0 !important;
-}
 .layout-fs .wrapper > section {
   position: absolute;
   top: 115px;
@@ -641,9 +610,6 @@ body {
   width: 100%;
   height: 100%;
   padding: 0;
-}
-.layout-fs.hidden-footer .wrapper > section {
-  bottom: 0;
 }
 .d-table,
 .d-table-fixed {
@@ -729,18 +695,12 @@ body {
 .layout-h .wrapper > .offsidebar {
   margin-top: 55px;
 }
-.layout-h .wrapper > footer {
-  margin: 0;
-}
 .layout-h.layout-fixed .wrapper > section,
 .layout-h.layout-fixed .wrapper > .offsidebar {
   margin-top: 55px;
 }
 .aside-float .wrapper {
   box-shadow: 0 0 0 #000;
-}
-.aside-float .wrapper > footer {
-  border: 0;
 }
 .aside-float .wrapper > .aside {
   padding: 15px 0;
@@ -761,9 +721,6 @@ body {
 @media only screen and (min-width: 768px) {
   .aside-float .wrapper > section {
     padding-left: 15px;
-  }
-  .aside-float .wrapper > footer {
-    left: 15px;
   }
 }
 .aside-float .wrapper .content-wrapper {
@@ -787,9 +744,6 @@ body {
 }
 .aside-float.aside-toggled .wrapper > section {
   padding-left: 15px;
-}
-.aside-float.aside-toggled .wrapper > footer {
-  left: 15px;
 }
 @media only screen and (min-width: 768px) {
   .aside-float.aside-collapsed .topnavbar .navbar-header {
