@@ -982,7 +982,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .topnavbar {
-    border: 0;
+    border-bottom: 1px solid #EEEEEE;
     background-color: #CAD6DC;
     background-image: -webkit-linear-gradient(left, #CAD6DC 0%, #223268 100%);
     background-image: -o-linear-gradient(left, #CAD6DC 0%, #223268 100%);
