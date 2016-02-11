@@ -118,9 +118,6 @@
             dialogClass: "modal-dialog modal-lg" // Bootstrap classes for large modal
         });
     </script>
-
-    <!-- Custom JS -->
-    <script src="{{ asset('hamedmehryar/laracancan/js/custom.js') }}"></script>
     <!-- DATATABLES-->
     <script src="{{ asset('hamedmehryar/laracancan/other/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('hamedmehryar/laracancan/other/datatables-colvis/js/dataTables.colVis.js') }}"></script>
