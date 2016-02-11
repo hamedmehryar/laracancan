@@ -1,3 +1,5 @@
+![Screen Shot](https://raw.github.com/hamedmehryar/laracancan/master/src/public/img/logo.png)
+
 #Note: This is a pre-release version ;)
 # LaraCanCan
 Resource-Based permission system for laravel
@@ -9,6 +11,11 @@ Resource-Based permission system for laravel
 * Roles
 * Custom Permissions
 
+![Screen Shot](https://raw.github.com/hamedmehryar/laracancan/master/roles.png)
+
+![Screen Shot](https://raw.github.com/hamedmehryar/laracancan/master/resources.png)
+
+![Screen Shot](https://raw.github.com/hamedmehryar/laracancan/master/permissions.png)
 
 ## Installation (Laravel 5.x)
 In composer.json:
