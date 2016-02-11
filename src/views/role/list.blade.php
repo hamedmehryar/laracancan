@@ -70,7 +70,7 @@
                                                              <li><a class="edit_role" role-id="{{$role->id}}"><i class="fa fa-edit"></i> Edit</a></li>
                                                              <li><a class="manage_role_permissions" role-id="{{$role->id}}"><i class="fa fa-key"></i> Manage Permissions</a></li>
                                                              <li><a class="delete_role" role-id="{{$role->id}}" href="#" ><i class="fa fa-trash-o"></i> Delete</a></li>
-                                                             {!!Form::open(array('url' => url('laracancan/lccrole/'.$role->id), 'method' => 'delete', 'id'=>'delete_role_'.$role->id))!!}
+                                                             {!!Form::open(array('route' => array('lccrole.destroy', $role->id), 'method' => 'delete', 'id'=>'delete_role_'.$role->id))!!}
                                                              {!!Form::close()!!}
                                                          </ul>
                                                      </div>
@@ -94,17 +94,17 @@
     <script>
         $('#add_role_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccrole/create')}}", "modal-content", true);
+            getContentWithAjax("{{url('lccrole/create')}}", "modal-content", true);
         });
 
         $(".edit_role").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccrole')}}/"+$(this).attr('role-id')+"/edit", "modal-content", true);
+            getContentWithAjax("{{url('lccrole')}}/"+$(this).attr('role-id')+"/edit", "modal-content", true);
         });
 
         $(".manage_role_permissions").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccrole')}}/"+$(this).attr('role-id')+"/manage_role_permissions", "modal-content", true);
+            getContentWithAjax("{{url('lccrole')}}/"+$(this).attr('role-id')+"/manage_role_permissions", "modal-content", true);
         });
 
         $(".delete_role").confirm({

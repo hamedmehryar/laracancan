@@ -109,7 +109,7 @@
                                                                      </button>
                                                                      <ul class="dropdown-menu pull-right">
                                                                          <li><a class="delete_resourcepermission" permission-id="{{$permission->permission->id}}" resource-id="{{$resource->id}}" href="#"><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
-                                                                         {!!Form::open(array('url' => url('laracancan/lccresourcepermission')."/".$permission->permission->id, 'method' => 'delete', 'id'=>'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id))!!}
+                                                                         {!!Form::open(array('route' => array('lccresourcepermission.destroy', $permission->permission->id), 'method' => 'delete', 'id'=>'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id))!!}
                                                                          {!! Form::hidden('resource_id', $resource->id) !!}
                                                                          {!!Form::close()!!}
                                                                          <li><a class="can_also" permission-id="{{$permission->id}}"><i class="fa fa-sitemap"></i>Can Also..</a></li>
@@ -138,22 +138,22 @@
     <script>
         $('#add_permission_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccpermission/create')}}", "modal-content", true);
+            getContentWithAjax("{{url('lccpermission/create')}}", "modal-content", true);
         });
 
         $('.add_resourcepermission_btn').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccresourcepermission/create')}}?resource_id="+$(this).attr('resource-id'), "modal-content", true);
+            getContentWithAjax("{{url('lccresourcepermission/create')}}?resource_id="+$(this).attr('resource-id'), "modal-content", true);
         });
 
         $('.can_also').click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccresourcepermission')}}/"+$(this).attr('permission-id')+"/can-also", "modal-content", true);
+            getContentWithAjax("{{url('lccresourcepermission')}}/"+$(this).attr('permission-id')+"/can-also", "modal-content", true);
         });
 
         $(".edit_permission").click(function(){
             showModalUntilAjaxResponse("general_modal");
-            getContentWithAjax("{{url('laracancan/lccpermission')}}/"+$(this).attr('permission-id')+"/edit", "modal-content", true);
+            getContentWithAjax("{{url('lccpermission')}}/"+$(this).attr('permission-id')+"/edit", "modal-content", true);
         });
 
         $(".delete_resourcepermission").confirm({

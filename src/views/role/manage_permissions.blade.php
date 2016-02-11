@@ -4,7 +4,7 @@
 </div>
  <div class="modal-body">
 
-    {!! Form::open(['url' => url('laracancan/lccrole')."/".$role->id.'/manage_role_permissions']) !!}
+    {!! Form::open(['url' => url('lccrole')."/".$role->id.'/manage_role_permissions']) !!}
      <div class="row">
          <div class="col-md-6">
              <select name="resource_id" style="width: 100%;" size="20" id="resource_id">
