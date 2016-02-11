@@ -3,8 +3,6 @@
      <h4 class="modal-title">Add New Permission</h4>
 </div>
  <div class="modal-body">
-     <!-- search box starts here -->
-      @include('errors.error_list')
 
     {!! Form::open(['route' => 'lccpermission.store']) !!}
      <div class="form-group">

@@ -15,7 +15,7 @@
     </style>
 @stop
 @section('content')
-
+    @include('laracancan::master.error_list')
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Permissions</h2>

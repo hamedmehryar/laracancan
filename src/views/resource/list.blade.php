@@ -14,6 +14,7 @@
     </style>
 @stop
 @section('content')
+    @include('laracancan::master.error_list')
             <div class="row">
                 <div class="col-md-6">
                     <h2>Resources</h2>
