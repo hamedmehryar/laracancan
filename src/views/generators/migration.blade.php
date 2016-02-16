@@ -62,8 +62,8 @@ class CreateLaracancanTables extends Migration
 
         // Create table for associating resources to each other (Many-to-Many)
         Schema::create('{{ $resourceRelationsTable }}', function (Blueprint $table) {
-            $table->integer('resource_id');
-            $table->integer('child_id');
+            $table->integer('resource_id')->unsigned()->nullable();
+            $table->integer('child_id')->unsigned()->nullable();
             $table->string('pivot')->nullable();
         });
 
