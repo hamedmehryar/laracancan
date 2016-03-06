@@ -190,7 +190,7 @@ class Laracancan
     public function can($permission, $resource)
     {
         if ($user = $this->user()) {
-            return $user->can($resource, $permission);
+            return $user->can($permission, $resource);
         }
         return false;
     }
