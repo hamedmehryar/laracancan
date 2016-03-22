@@ -64,10 +64,10 @@ class LaracancanServiceProvider extends ServiceProvider {
 	 */
 	private function registerCommands()
 	{
-		$this->app->bindShared('command.laracancan.migration', function ($app) {
+		$this->app->singleton('command.laracancan.migration', function ($app) {
 			return new MigrationCommand();
 		});
-		$this->app->bindShared('command.laracancan.seed', function ($app) {
+		$this->app->singleton('command.laracancan.seed', function ($app) {
 			return new SeederCommand();
 		});
 	}
