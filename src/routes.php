@@ -2,7 +2,7 @@
 
 
 Route::get('lcc', function(){
-	if(Auth::check() && Auth::user()->id == Config::get("laracancan.super_admin")){
+	if(Auth::user() != null && Auth::user()->id == Config::get("laracancan.super_admin")){
 		return view('laracancan::master.master');
 	}
 	return "Not Allowed!";
