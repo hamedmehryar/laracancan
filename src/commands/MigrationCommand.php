@@ -89,8 +89,8 @@ class MigrationCommand extends Command
     {
         $migrationFile = base_path("/database/migrations")."/".date('Y_m_d_His')."_create_laracancan_tables.php";
 
-        $usersTable  = Config::get('auth.table');
-        $userModel   = Config::get('auth.model');
+        $usersTable  = Config::get('laracancan.user_table');
+        $userModel   = Config::get('laracancan.user_model');
         $userKeyName = (new $userModel())->getKeyName();
 
         $data = compact('rolesTable', 'roleUserTable', 'permissionsTable', 'resourcesTable', 'resourceRelationsTable', 'resourcePermissionTable', 'resourcePermissionRoleTable', 'usersTable', 'userKeyName');

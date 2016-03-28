@@ -19,7 +19,7 @@ class Role extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(Config::get('auth.model'), 'lcc_role_user');
+        return $this->belongsToMany(Config::get('laracancan.user_model'), 'lcc_role_user');
     }
 
     /**
