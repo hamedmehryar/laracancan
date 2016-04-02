@@ -34,5 +34,16 @@ return [
     |
     */
 
-    'user_table' => 'users'
+    'user_table' => 'users',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Role Model
+    |--------------------------------------------------------------------------
+    |
+    | Please specify the roles Model in your application.
+    |
+    */
+
+    'role_model' => 'Hamedmehryar\Laracancan\Models\Role'
 ];
