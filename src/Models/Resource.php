@@ -18,7 +18,7 @@ class Resource extends Model {
     public function childResourcesIds(){
         $query = $this->childResources()->lists('id');
         if(! str_contains(Application::VERSION, '5.0')){
-            $query = $query->get();
+            $query = $query->all();
         }
         return $query;
     }
@@ -30,7 +30,7 @@ class Resource extends Model {
     public function parentResourcesIds(){
         $query = $this->parentResources()->lists('id');
         if(! str_contains(Application::VERSION, '5.0')){
-            $query = $query->get();
+            $query = $query->all();
         }
         return $query;
     }
