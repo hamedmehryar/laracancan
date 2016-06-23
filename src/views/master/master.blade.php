@@ -40,7 +40,6 @@
     <link href="{{ asset('hamedmehryar/laracancan/bootstrap-toggle-master/css/bootstrap-toggle.css') }}" rel="stylesheet">
 
     <link href="{{ asset('hamedmehryar/laracancan/css/theme-promote.css') }}" rel="stylesheet">
-    <link href="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/themes/blue/style.css') }}" rel="stylesheet">
     <link href="{{asset('hamedmehryar/laracancan/css/pace.css')}}" rel="stylesheet">
     <link href=" {{ asset('hamedmehryar/laracancan/bootstrap-multi-select/css/bootstrap-multiselect.css') }}" rel="stylesheet">
     @yield('page_specific_styles')
@@ -171,13 +170,11 @@
 <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/dataTables.responsive.js')}}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/js/demo/demo-datatable.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/other/bootstrap-wysiwyg/bootstrap-wysiwyg.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/ifvisible/ifvisible.min.js') }}"></script>
 
 <!-- =============== APP SCRIPTS ===============-->
 <script src="{{ asset('hamedmehryar/laracancan/js/app.js') }}"></script>
-<script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.js') }}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/js/pace.min.js')}}"></script>
 <script src="{{ asset('hamedmehryar/laracancan/jquery.confirm-master/jquery.confirm.min.js') }}"></script>
 @yield('page_specific_scripts')

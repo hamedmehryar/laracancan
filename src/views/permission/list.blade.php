@@ -1,19 +1,4 @@
 @extends('laracancan::master.master')
-@section('page_specific_styles')
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <!-- DATATABLES-->
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatables-colvis/css/dataTables.colVis.css') }}">
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/css/dataTables.bootstrap.css') }}">
-    <link rel="stylesheet" href=" {{ asset('hamedmehryar/laracancan/silviomoreto-bootstrap-select/dist/css/bootstrap-select.css') }}">
-    <style>
-        li.training_grid {
-            display: -moz-inline-stack;
-            display: inline-block;
-            *display: inline;
-        }
-
-    </style>
-@stop
 @section('content')
     @include('laracancan::master.error_list')
             <div class="row">
@@ -43,7 +28,7 @@
                                                  <button href="#" id="add_permission_btn" class="btn btn-danger bottom_buttons notext large"><i class="fa fa-plus"></i></button>
                                              </div>
                                          </div>
-                                         <table class="table table-striped table-hover tablesorter">
+                                         <table class="table table-striped table-hover">
                                              <thead>
                                                  <tr>
                                                      <th>#</th>
@@ -81,7 +66,7 @@
                                              @if($resource->resourcePermissions->count() == 0)
                                                  <label class="label label-warning">No Permission Found</label>
                                              @else
-                                                 <table class="table table-striped table-hover tablesorter">
+                                                 <table class="table table-striped table-hover">
                                                      <thead>
                                                      <tr>
                                                          <th>#</th>
@@ -173,18 +158,8 @@
             dialogClass: "modal-dialog modal-lg" // Bootstrap classes for large modal
         });
     </script>
-
-    <!-- DATATABLES-->
-    <script src="{{ asset('hamedmehryar/laracancan/other/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/other/datatables-colvis/js/dataTables.colVis.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrap.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/other/datatable-bootstrap/js/dataTables.bootstrapPagination.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/js/demo/demo-datatable.js') }}"></script>
-    <script src="{{ asset('hamedmehryar/laracancan/jquery.tablesorter/jquery.tablesorter.min.js') }}"></script>
     <script src="{{ asset('hamedmehryar/laracancan/silviomoreto-bootstrap-select/dist/js/bootstrap-select.js') }}"></script>
     <script>
-        if($('table') != null)
-            $('table').tablesorter();
         $(document).ready(function(){
             $('.table').dataTable();
         });
