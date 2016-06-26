@@ -85,8 +85,10 @@ class CreateLaracancanTables extends Migration
 
         // add foreign keys to resourcepermissions table
         Schema::table('{{ $resourcePermissionTable }}', function (Blueprint $table) {
-            $table->foreign('permission_id')->references('id')->on('{{$permissionsTable}}');
-            $table->foreign('resource_id')->references('id')->on('{{$resourcesTable}}');
+            $table->foreign('permission_id')->references('id')->on('{{$permissionsTable}}')
+                ->onDelete('cascade');
+            $table->foreign('resource_id')->references('id')->on('{{$resourcesTable}}')
+                ->onDelete('cascade');
         });
 
         // Create table for assiciating resource-permissions to roles
@@ -100,7 +102,8 @@ class CreateLaracancanTables extends Migration
         Schema::table('{{ $resourcePermissionRoleTable }}', function (Blueprint $table) {
             $table->foreign('resourcepermission_id')->references('id')->on('{{$resourcePermissionTable}}')
                 ->onDelete('cascade');
-            $table->foreign('role_id')->references('id')->on('{{$rolesTable}}');
+            $table->foreign('role_id')->references('id')->on('{{$rolesTable}}')
+                ->onDelete('cascade');
         });
     }
 
