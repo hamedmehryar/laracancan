@@ -24,7 +24,7 @@ class ResourceController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -38,7 +38,7 @@ class ResourceController extends Controller {
 			return view('laracancan::resource.add');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -90,7 +90,7 @@ class ResourceController extends Controller {
 			return redirect()->back()->with('flash_success', 'Resource added Successfully !');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -118,7 +118,7 @@ class ResourceController extends Controller {
 				->with('resource', $resource);
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -172,7 +172,7 @@ class ResourceController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -188,7 +188,7 @@ class ResourceController extends Controller {
 			return redirect()->back()->with('flash_success', 'Resource deleted Successfully !');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	public function manageChildren($id){
@@ -198,7 +198,7 @@ class ResourceController extends Controller {
 				->with('resource', $resource);
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	public function postManageChildren($id){
@@ -222,7 +222,7 @@ class ResourceController extends Controller {
 			return redirect()->back()->with('flash_success', 'Records Updated Successfully');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 }

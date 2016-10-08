@@ -36,7 +36,7 @@ class ResourcepermissionController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -66,7 +66,7 @@ class ResourcepermissionController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -118,7 +118,7 @@ class ResourcepermissionController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	public function canAlso($id){
@@ -137,7 +137,7 @@ class ResourcepermissionController extends Controller {
 				->with('resource', $resource);
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 	public function postCanAlso($id){
 		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
@@ -156,7 +156,7 @@ class ResourcepermissionController extends Controller {
 			return redirect()->back()->with('flash_success', 'Records Updated Successfully');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 }

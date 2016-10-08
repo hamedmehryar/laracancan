@@ -27,7 +27,7 @@ class PermissionController extends Controller {
 			}
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -41,7 +41,7 @@ class PermissionController extends Controller {
 			return view('laracancan::permission.add');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -80,7 +80,7 @@ class PermissionController extends Controller {
 			return redirect()->back()->with('flash_success', 'Permission added Successfully !');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -110,7 +110,7 @@ class PermissionController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -150,7 +150,7 @@ class PermissionController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**

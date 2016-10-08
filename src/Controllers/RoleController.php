@@ -27,7 +27,7 @@ class RoleController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -41,7 +41,7 @@ class RoleController extends Controller {
 			return view('laracancan::role.add');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -80,7 +80,7 @@ class RoleController extends Controller {
 			return redirect()->back()->with('flash_success', 'Role added Successfully!');
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -110,7 +110,7 @@ class RoleController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -150,7 +150,7 @@ class RoleController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	/**
@@ -174,7 +174,7 @@ class RoleController extends Controller {
 
         }
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
     }
 
     /**
@@ -217,7 +217,7 @@ class RoleController extends Controller {
 
         }
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
      }
 
     /**
@@ -236,7 +236,7 @@ class RoleController extends Controller {
                  return redirect()->back()->with('flash_success', 'Role restored successfully!');
          }
 
-		 return response(view('laracancan::master.errors.401'), 401);
+		 return response(view('laracancan::master.401'), 401);
      }
 
 	/**
@@ -255,7 +255,7 @@ class RoleController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 	}
 
 	public function manageRolePermissionsAction($id){
@@ -283,7 +283,7 @@ class RoleController extends Controller {
 
 		}
 
-		return response(view('laracancan::master.errors.401'), 401);
+		return response(view('laracancan::master.401'), 401);
 
 	}
 
