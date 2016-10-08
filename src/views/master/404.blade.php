@@ -1,4 +1,4 @@
-@extends('master')
+@extends('laracancan::master.master')
 @section('page_specific_styles')
 	<style>
 		#errors{
