@@ -1,6 +1,5 @@
 ![Screen Shot](https://raw.github.com/hamedmehryar/laracancan/master/src/public/img/logo.png)
 
-#Note: This is a pre-release version ;)
 # LaraCanCan
 Resource-Based permission system for laravel
 
@@ -21,7 +20,7 @@ Resource-Based permission system for laravel
 In composer.json:
 
     "require": {
-        "hamedmehryar/laracancan" "0.0.0"
+        "hamedmehryar/laracancan" "1.0.0"
     }
 
 Run:
