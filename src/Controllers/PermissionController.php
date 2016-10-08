@@ -17,19 +17,17 @@ class PermissionController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin'))
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin'))
 		{
 			if(Input::get('ajax') == null){
 				$resources = Resource::all();
 				return view('laracancan::permission.list')
 					->with('resources', $resources);
 
-			}else{
-
 			}
-		}else{
-			return redirect()->to('login');
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -39,11 +37,11 @@ class PermissionController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::permission.add');
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -53,7 +51,7 @@ class PermissionController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -80,9 +78,9 @@ class PermissionController extends Controller {
 			$permission->save();
 
 			return redirect()->back()->with('flash_success', 'Permission added Successfully !');
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -104,15 +102,15 @@ class PermissionController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$permission = Permission::find($id);
 			return view('laracancan::permission.edit')
 				->with('permission', $permission);
 
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -123,7 +121,7 @@ class PermissionController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -150,9 +148,9 @@ class PermissionController extends Controller {
 
 			return redirect()->back()->with('flash_success', 'Permission edited Successfully !');
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**

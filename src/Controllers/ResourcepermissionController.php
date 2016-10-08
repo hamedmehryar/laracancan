@@ -28,15 +28,15 @@ class ResourcepermissionController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$resource = Resource::find(Input::get('resource_id'));
 			return view('laracancan::permission.add_resourcepermission')
 				->with('resource', $resource);
 
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -46,7 +46,7 @@ class ResourcepermissionController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$permissionIds = Input::get('permissions');
 			if(count($permissionIds) > 0 ){
@@ -60,14 +60,13 @@ class ResourcepermissionController extends Controller {
 				$resource->resourcePermissions()->attach($permissions);
 
 				return redirect()->back()->with('flash_success', 'Permissions added for this resource.');
-			}else
-			{
-				return redirect()->back()->with('flash_warn', 'No permission selected!');
 			}
 
-		}else{
-			return response(view('errors.401'), 401);
+			return redirect()->back()->with('flash_warn', 'No permission selected!');
+
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -111,19 +110,19 @@ class ResourcepermissionController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$resource = Resource::find(Input::get('resource_id'));
 			$resource->resourcePermissions()->detach([$id]);
 			return redirect()->back()->with('flash_success', 'Permission successfully removed from this resource.');
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	public function canAlso($id){
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			try {
 				$resourcePermission = Resourcepermission::findorFail($id);
 			} catch (ModelNotFoundException $e) {
@@ -137,10 +136,11 @@ class ResourcepermissionController extends Controller {
 				->with('canAlsoes', $canAlsoes)
 				->with('resource', $resource);
 		}
-		return "LOGOUT";
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 	public function postCanAlso($id){
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			try{
 				$resourcePermission = Resourcepermission::findOrFail($id);
 			}catch(ModelNotFoundException $e){
@@ -155,7 +155,8 @@ class ResourcepermissionController extends Controller {
 
 			return redirect()->back()->with('flash_success', 'Records Updated Successfully');
 		}
-		return response(view('errors.401'), 401);
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 }

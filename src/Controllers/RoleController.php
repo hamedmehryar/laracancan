@@ -19,15 +19,15 @@ class RoleController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$roles = Role::all();
 
 			return view('laracancan::role.list')
 				->with('roles', $roles);
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -37,11 +37,11 @@ class RoleController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::role.add');
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -51,7 +51,7 @@ class RoleController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -78,9 +78,9 @@ class RoleController extends Controller {
 			$role->save();
 
 			return redirect()->back()->with('flash_success', 'Role added Successfully!');
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -102,15 +102,15 @@ class RoleController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			return view('laracancan::role.edit')
 				->with('role', $role);
 
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -121,7 +121,7 @@ class RoleController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$input = Input::all();
 			$rules = [
@@ -148,9 +148,9 @@ class RoleController extends Controller {
 
 			return redirect()->back()->with('flash_success', 'Role edited Successfully !');
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -161,7 +161,7 @@ class RoleController extends Controller {
      */
     public function destroy($id)
     {
-        if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+        if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
             $role = Role::find($id);
 
@@ -172,9 +172,9 @@ class RoleController extends Controller {
             $role->save();
                 return redirect()->back()->with('flash_success', 'Role trashed successfully!');
 
-        }else{
-            return response(view('errors.401'), 401);
         }
+
+		return response(view('laracancan::master.errors.401'), 401);
     }
 
     /**
@@ -208,16 +208,16 @@ class RoleController extends Controller {
      */
      public function delete($id)
      {
-        if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+        if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
             $role = Role::find($id);
             $role->trash = ModelStatus::DELETED;
             $role->save();
                 return redirect()->back()->with('flash_success', 'Role deleted successfully!');
 
-        }else{
-            return response(view('errors.401'), 401);
         }
+
+		return response(view('laracancan::master.errors.401'), 401);
      }
 
     /**
@@ -228,15 +228,15 @@ class RoleController extends Controller {
      */
      public function restore($id)
      {
-         if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+         if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
              $role = Role::find($id);
              $role->trash = ModelStatus::ACTIVE;
              $role->save();
                  return redirect()->back()->with('flash_success', 'Role restored successfully!');
-         }else{
-             return response(view('errors.401'), 401);
          }
+
+		 return response(view('laracancan::master.errors.401'), 401);
      }
 
 	/**
@@ -247,20 +247,20 @@ class RoleController extends Controller {
 	 */
 	public function manageRolePermissions($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			return view('laracancan::role.manage_permissions')
 				->with('role', $role);
 
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	public function manageRolePermissionsAction($id){
 
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$role = Role::find($id);
 			$role->resourcePermissions()->detach();
@@ -281,9 +281,9 @@ class RoleController extends Controller {
 			}
 			return redirect()->back()->with('flash_success', 'Permissions saved successfully!');
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 
 	}
 

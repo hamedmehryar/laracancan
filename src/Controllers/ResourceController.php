@@ -16,15 +16,15 @@ class ResourceController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$resources = Resource::all();
 
 			return view('laracancan::resource.list')
 				->with('resources', $resources);
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -34,11 +34,11 @@ class ResourceController extends Controller {
 	 */
 	public function create()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			return view('laracancan::resource.add');
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -48,7 +48,7 @@ class ResourceController extends Controller {
 	 */
 	public function store()
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$user = Auth::user();
 			$input = Input::all();
@@ -88,9 +88,9 @@ class ResourceController extends Controller {
 			$resource->save();
 
 			return redirect()->back()->with('flash_success', 'Resource added Successfully !');
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -112,13 +112,13 @@ class ResourceController extends Controller {
 	 */
 	public function edit($id)
 	{
-		if(Auth::user()!= null && Auth::user()->id == Config::get('laracancan.super_admin')) {
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')) {
 			$resource = Resource::find($id);
 			return view('laracancan::resource.edit')
 				->with('resource', $resource);
-		}else{
-			return "LOGOUT";
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -129,7 +129,7 @@ class ResourceController extends Controller {
 	 */
 	public function update($id)
 	{
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 
 			$user = Auth::user();
 			$input = Input::all();
@@ -170,9 +170,9 @@ class ResourceController extends Controller {
 
 			return redirect()->back()->with('flash_success', 'Resource edited Successfully !');
 
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	/**
@@ -183,25 +183,26 @@ class ResourceController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		if(Auth::user()!= null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			Resource::destroy($id);
 			return redirect()->back()->with('flash_success', 'Resource deleted Successfully !');
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 	public function manageChildren($id){
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$resource = Resource::find($id);
 			return view('laracancan::resource.manage_children')
 				->with('resource', $resource);
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
+
 	public function postManageChildren($id){
-		if(Auth::user() != null && Auth::user()->id == Config::get('laracancan.super_admin')){
+		if(Auth::user() && Auth::user()->id == Config::get('laracancan.super_admin')){
 			$children = Input::get('children', array());
 			$resource = Resource::find($id);
 			$resource->childResources()->detach();
@@ -219,9 +220,9 @@ class ResourceController extends Controller {
 				}
 			}
 			return redirect()->back()->with('flash_success', 'Records Updated Successfully');
-		}else{
-			return response(view('errors.401'), 401);
 		}
+
+		return response(view('laracancan::master.errors.401'), 401);
 	}
 
 }
