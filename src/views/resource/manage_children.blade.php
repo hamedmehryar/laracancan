@@ -3,49 +3,49 @@
      <h4 class="modal-title">Resource <label class="label label-default" style="color: #000000">{{$resource->display_name_en}}</label>: Manage Children</h4>
 </div>
  <div class="modal-body">
-    {!! Form::open(['route' => array('lccresource.postManageChildren', $resource->id)]) !!}
-     <div class="row">
-         <div class="col-md-12">
-             <div class="row">
-                 <div class="col-md-6">
-                     <strong>
-                         Related Resources
-                     </strong>
-                 </div>
-                 <div class="col-md-6">
-                     <strong>
-                         Pivot table name for Many2Many relationships
-                     </strong>
-                 </div>
-             </div>
-             <hr style="margin-top: 0px;margin-bottom: 0px;">
-             @foreach(\Hamedmehryar\Laracancan\Models\Resource::where('id', '!=', $resource->id)->get() as $r)
+     <form action="{{ route('lccresource.postManageChildren', ['id' => $resource->id]) }}">
+         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+         <div class="row">
+             <div class="col-md-12">
                  <div class="row">
                      <div class="col-md-6">
-                         {!!Form::checkbox( 'children[]', $r->id ,$r->isChildOf($resource->id),['id'=>'resource'.$r->id, 'class'=>'resourcecheckbox', 'data-resource-id'=> $r->id] )!!}<label for="{{'resource'.$r->id}}">&nbsp;{{$r->display_name_en}}</label>
+                         <strong>
+                             Related Resources
+                         </strong>
                      </div>
                      <div class="col-md-6">
-                         @if($r->isParentOf($resource->id))
-                             <?php
-                                 $pivot = "";
-                                 if(DB::table('lcc_resourcerelations')->where('resource_id',$resource->id)->where('child_id', $r->id)->exists())
-                                     $pivot = DB::table('lcc_resourcerelations')->where('resource_id',$resource->id)->where('child_id', $r->id)->first()->pivot;
-                             ?>
-                             {!!Form::text($r->id.'_pivot', $pivot, ['id'=>$r->id.'_pivot', 'class'=>'pivotname form-control', 'style'=>$r->isChildOf($resource->id)?'block':'display:none'])!!}
-                         @endif
+                         <strong>
+                             Pivot table name for Many2Many relationships
+                         </strong>
                      </div>
                  </div>
                  <hr style="margin-top: 0px;margin-bottom: 0px;">
-             @endforeach
+                 @foreach(\Hamedmehryar\Laracancan\Models\Resource::where('id', '!=', $resource->id)->get() as $r)
+                     <div class="row">
+                         <div class="col-md-6">
+                             <input type="checkbox" name="children[]" value="{{ $r->id }}" {{ $r->isChildOf($resource->id)?"checked":"" }} id="{{ 'resource'.$r->id }}" class="resourcecheckbox" data-resource-id="{{ $r->id }}"/><label for="{{'resource'.$r->id}}">&nbsp;{{$r->display_name_en}}</label>
+                         </div>
+                         <div class="col-md-6">
+                             @if($r->isParentOf($resource->id))
+                                 <?php
+                                 $pivot = "";
+                                 if(DB::table('lcc_resourcerelations')->where('resource_id',$resource->id)->where('child_id', $r->id)->exists())
+                                     $pivot = DB::table('lcc_resourcerelations')->where('resource_id',$resource->id)->where('child_id', $r->id)->first()->pivot;
+                                 ?>
+                                    <input type="text" name="{{ $r->id.'_pivot' }}" id="{{ $r->id.'_pivot' }}" class="pivotname form-control" style="{{ $r->isChildOf($resource->id)?'block':'display:none' }}"/>
+                             @endif
+                         </div>
+                     </div>
+                     <hr style="margin-top: 0px;margin-bottom: 0px;">
+                 @endforeach
+             </div>
          </div>
-     </div>
-     <hr>
+         <hr>
 
-     <div class="form-group pull-right">
-        <button class="btn btn-success notext large" type="submit"><i class="fa fa-save"></i></button>
-     </div>
-
-     {!! Form::close() !!}
+         <div class="form-group pull-right">
+             <button class="btn btn-success notext large" type="submit"><i class="fa fa-save"></i></button>
+         </div>
+     </form>
  </div>
 <script>
     $('.resourcecheckbox').change(function(){

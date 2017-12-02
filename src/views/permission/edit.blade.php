@@ -5,25 +5,25 @@
 
 <div class="modal-body">
 
-    {!! Form::model($permission, array('route' => array('lccpermission.update', $permission->id), 'method'=> 'put','data-parsley-validate'=> '')) !!}
+    <form action="{{ route('lccpermission.update', ['id' => $permission->id]) }}" method="put" data-parsley-validate="">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+            <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="name" class="form-control" value="{{ $permission->name }}" required data-parsley-minlength="3"/>
+        </div>
 
-     <div class="form-group">
-        <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
-        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required', 'data-parsley-minlength'=>'3']) !!}
-     </div>
+        <div class="form-group">
+            <label>Display Name<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="display_name" class="form-control" value="{{ $permission->display_name }}" required data-parsley-minlength="3"/>
+        </div>
 
-     <div class="form-group">
-         <label>Display Name<span style="color:red; margin-left:2px;" >*</span></label>
-         {!! Form::text('display_name', null, ['class' => 'form-control', 'required' => 'required', 'data-parsley-minlength'=>'3']) !!}
-     </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control" value="{{ $permission->description }}"></textarea>
+        </div>
 
-     <div class="form-group">
-         <label>Description</label>
-         {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-     </div>
+        <button class="btn btn-success bottom_buttons notext large" type="submit"><i class="fa fa-save"></i></button>
+    </form>
 
-    <button class="btn btn-success bottom_buttons notext large" type="submit"><i class="fa fa-save"></i></button>
-
-    {!! Form::close() !!}
     <br><br><br>
 </div>

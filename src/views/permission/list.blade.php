@@ -94,9 +94,10 @@
                                                                      </button>
                                                                      <ul class="dropdown-menu pull-right">
                                                                          <li><a class="delete_resourcepermission" permission-id="{{$permission->permission->id}}" resource-id="{{$resource->id}}" href="#"><i class="fa fa-trash-o"></i>&nbsp;Delete</a></li>
-                                                                         {!!Form::open(array('route' => array('lccresourcepermission.destroy', $permission->permission->id), 'method' => 'delete', 'id'=>'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id))!!}
-                                                                         {!! Form::hidden('resource_id', $resource->id) !!}
-                                                                         {!!Form::close()!!}
+                                                                         <form action="{{ route('lccresourcepermission.destroy', ['id' => $permission->permission->id]) }}" method="delete" id="{{ 'delete_resourcepermission_'.$resource->id.'_'.$permission->permission->id }}">
+                                                                             <input type="hidden" name="resource_id" value="{{ $resource->id }}"/>
+                                                                             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                                                                         </form>
                                                                          <li><a class="can_also" permission-id="{{$permission->id}}"><i class="fa fa-sitemap"></i>Can Also..</a></li>
                                                                      </ul>
                                                                  </div>

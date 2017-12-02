@@ -5,26 +5,25 @@
 
 <div class="modal-body">
 
-    {!! Form::model($role, array('route' => array('lccrole.update', $role->id), 'method'=> 'put','data-parsley-validate'=> '')) !!}
+    <form action="{{ route('lccrole.update', ['id' => $role->id]) }}" method="put" data-parsley-validate="">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+            <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="name" value="{{ $role->name }}" class="form-control" required data-parsley-minlength="3"/>
+        </div>
 
-    <div class="form-group">
-        <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
-        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required', 'data-parsley-minlength'=>'3']) !!}
-    </div>
+        <div class="form-group">
+            <label>Display Name:<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="display_name" value="{{ $role->display_name }}" class="form-control" required data-parsley-minlength="3"/>
+        </div>
 
-    <div class="form-group">
-        <label>Display Name:<span style="color:red; margin-left:2px;" >*</span></label>
-        {!! Form::text('display_name', null, ['class' => 'form-control', 'required' => 'required', 'data-parsley-minlength'=>'3']) !!}
-    </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control">{{ $role->description }}</textarea>
+        </div>
 
-    <div class="form-group">
-        <label>Description</label>
-        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-    </div>
-
-    <button class="btn btn-success bottom_buttons notext large" type="submit"><i class="fa fa-save"></i></button>
-
-    {!! Form::close() !!}
+        <button class="btn btn-success bottom_buttons notext large" type="submit"><i class="fa fa-save"></i></button>
+    </form>
 
     <br><br><br>
 </div>

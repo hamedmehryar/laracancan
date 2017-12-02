@@ -4,27 +4,28 @@
 </div>
 <div class="modal-body">
 
-    {!! Form::open(['route' => 'lccrole.store']) !!}
-    <div class="form-group">
-        <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
-        {!! Form::text('name', null, ['class' => 'form-control']) !!}
-    </div>
+    <form action="{{ route('lccrole.store') }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+            <label>Name:<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="name" class="form-control"/>
+        </div>
 
-    <div class="form-group">
-        <label>Display Name<span style="color:red; margin-left:2px;" >*</span></label>
-        {!! Form::text('display_name', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-        <label>Description</label>
-        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-    </div>
+        <div class="form-group">
+            <label>Display Name<span style="color:red; margin-left:2px;" >*</span></label>
+            <input type="text" name="display_name" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control"></textarea>
+        </div>
 
-    <hr>
+        <hr>
 
-    <div class="form-group pull-right">
-        <button class="btn btn-success notext large" type="submit"><i class="fa fa-save"></i></button>
-    </div>
-    {!! Form::close() !!}
+        <div class="form-group pull-right">
+            <button class="btn btn-success notext large" type="submit"><i class="fa fa-save"></i></button>
+        </div>
+    </form>
     <br><br>
 
 </div>
