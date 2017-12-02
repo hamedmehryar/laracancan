@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="content" id="errors">
 			<h1>Sorry, The page you are looking for is not found in the system.</h1>
-			<br>{!! link_to(URL::previous(), "Back") !!}
+			<br><a href="{{ URL::previous() }}">Back</a>
 		</div>
 	</div>
 @stop

@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="content" id="errors">
 			<h1>Sorry, This method is not allowed for this URL.</h1>
-			<br>{!! link_to(URL::previous(), "Back") !!}
+			<br><a href="{{ URL::previous() }}">Back</a>
 		</div>
 	</div>
 @stop

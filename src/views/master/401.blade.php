@@ -15,13 +15,8 @@
 @section('content')
 	<div class="container">
 		<div class="content" id="errors">
-			@if(Auth::user())
-				<h1>Sorry, You are not authorized to this action.</h1>
-				<br>{!! link_to(URL::previous(), "Back") !!}
-			@else
-				<h1>You are not logged in, please login to continue to this action.</h1>
-				<br>{!! link_to(route('app.login'), "Login") !!}
-			@endif
+			<h1>Sorry, You are not authorized to this action.</h1>
+			<br><a href="{{ URL::previous() }}">Back</a>
 		</div>
 	</div>
 @stop
