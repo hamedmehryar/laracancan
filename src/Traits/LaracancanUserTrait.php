@@ -239,7 +239,7 @@ trait LaracancanUserTrait{
      * @param $resource
      * @return bool
      */
-    function can($permission, $resource){
+    function cando($permission, $resource){
 
         if($this->id == Config::get('laracancan.super_admin',0)){
             return true;
